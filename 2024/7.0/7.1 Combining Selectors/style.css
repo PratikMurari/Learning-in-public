@@ -1,0 +1,30 @@
+/* Write your code here: 
+Types of selectors
+1. group selector
+2. child selector
+3. descendant selector
+4. chain selector
+5. Combining combie selector
+*/
+
+
+h1,h2 {
+    color: blueviolet;
+}
+
+.box > p {
+    color: firebrick;
+}
+
+.box li{
+    color: blue;
+}
+
+li.done{
+    color: seagreen;
+}
+
+ul p.done{
+    font-size: 0.5rem;
+}
+

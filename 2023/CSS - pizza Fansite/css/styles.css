@@ -1,0 +1,30 @@
+/*************************** TAG SELECTOR ***************************/
+h1{
+    color: brown; 
+    font-size: 125px;
+}
+
+img{
+    height: 200px;
+}
+
+img:hover{
+    background-color: gold;
+}
+
+
+/*************************** CLASS SELECTOR ***************************/
+
+.broccoli{
+    background-color: red;
+}
+
+.pizza{
+    background-color: green;
+}
+
+/*************************** ID SELECTOR ***************************/
+
+#heading {
+    color: blue;
+}
