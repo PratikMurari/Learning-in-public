@@ -1,2 +1,2 @@
-flexbox-sizing-exercise
+flex-sizing-exercise
 https://appbrewery.github.io/flexbox-sizing-exercise/
