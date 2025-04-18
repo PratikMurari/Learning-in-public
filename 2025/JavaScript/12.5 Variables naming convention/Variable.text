@@ -1,0 +1,17 @@
+why it is important, to make sure that people working on ur project understand what does those varible mean
+with great power comes great reposibility or even better the next person who gotta look at your code could be an axe murderer! 
+
+- ALways Give your variable meaning full name
+
+- Variable can't begain with number but can contain numbers
+
+- Variable can't contain Spaces
+
+- Variables can only contain alphabets, numbers, $, _
+    eg: abc123$_
+
+- Use camel casing for variables
+
+Camel casing is a naming convention where multiple words are combined into a single word, 
+with each subsequent word starting with a capital letter. 
+The first word may or may not start with a lowercase letter. (prefer lower case tho)
