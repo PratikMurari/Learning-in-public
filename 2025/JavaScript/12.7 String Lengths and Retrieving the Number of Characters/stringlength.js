@@ -1,5 +1,10 @@
-//var.length gives the length of the syring
+//var.length gives the length of the string
 
-var twit="Hi I am Pratik Murari";
-
-console.log("you have written " + twit.length + " characters, and you have left " + (140-twit.length)+ " characters");
+var tweet = "Hi I am Pratik Murari";
+console.log(
+  "you have written " +
+    tweet.length +
+    " characters, and you have left " +
+    (140 - tweet.length) +
+    " characters"
+);
