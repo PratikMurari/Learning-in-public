@@ -1,0 +1,38 @@
+JavaScript Comparison and Logical Operators
+
+- Comparison Operators?
+Comparison operators are used in logical statements to determine equality or difference between variables or values.
+
+
+The types of Comparison Operators
+
+==  	equal to
+=== 	equal value and equal type
+!=  	not equal
+!== 	not equal value or not equal type
+>   	greater than
+<   	less than
+>=  	greater than or equal to
+<=  	less than or equal to
+
+
+-Logical Operators?
+Logical operators are used to determine the logic between variables or values.
+
+
+The types of Logical Operators
+
+&&  	and
+||  	or
+!   	not
+
+
+
+-Conditional (Ternary) Operator
+JavaScript also contains a conditional operator that assigns a value to a variable based on some condition.
+
+Syntax
+variablename = (condition) ? value1:value2 
+
+Example 
+let voteable = (age < 18) ? "Too young":"Old enough";
