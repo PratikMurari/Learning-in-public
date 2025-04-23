@@ -15,14 +15,14 @@ let car3 = "BMW";
 //Using an array literal is the easiest way to create a JavaScript Array.
 
 //Syntax:
-const array_name = [item1, item2, ...];      
+var array_name = ["item1", "item2", "...", "item n"];      
 //Example
-const cars = ["Saab", "Volvo", "BMW"];
+var cars = ["Saab", "Volvo", "BMW"];
 
 
 //You can also create an array, and then provide the elements:
 //Example
-const cars = [];
+var cars = [];
 cars[0]= "Saab";
 cars[1]= "Volvo";
 cars[2]= "BMW";
