@@ -2,9 +2,15 @@
 //The while loop loops through a block of code as long as a specified condition is true.
 
 //Syntax
-
 while (condition) {
   // code block to be executed
+}
+
+//Angela Syntax
+var i = 1;
+while (i < 2) {
+  console.log(i);
+  i++;
 }
 
 //Example
