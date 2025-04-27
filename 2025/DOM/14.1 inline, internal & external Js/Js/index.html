@@ -1,0 +1,32 @@
+<!-- Now finally, we can also incorporate JavaScript as an external file.
+So instead of having a simple script tag we can have a script tag that has 
+an external source and we specify the location of that file inside the attribute src-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+   <h1>Hello</h1> 
+
+
+   <script src="./index.js"></script>
+
+</body>
+</html>
+
+<!--Now, the thing that is interesting though is that the position inside the HTML document where we place the 
+script tag matters a huge deal. With CSS, we tend to put it inside the head element so that it gets loaded up first 
+before any of the content of our website, which tends to be inside the body. But with JavaScript it's the opposite story 
+because if inside our script we tried to change an HTML element that does not yet exist then it will fail. 
+(coz js is in head or before the element), So best practice is always to put the script right at the end 
+just before the closing body tag. And the added benefit of this is, if you have a lot of JavaScript code, 
+which usually is a little bit more time-consuming to run, then at least all of the content of your website 
+will have been loaded up for the users to see, and the parts that they can't perceive, like the script code, 
+happens afterwards,so your website looks like it loads faster, whereas if you put the script right at the top, 
+and the browser has to go through all of the code before it can display all of the elements, 
+then it might look like your website is taking a long time to load up, which nobody has the patience for, right?-->
