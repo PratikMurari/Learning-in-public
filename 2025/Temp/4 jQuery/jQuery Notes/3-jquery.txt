@@ -1,0 +1,42 @@
+ Manipulating Styles with jQuery
+
+===============================
+🎨 jQuery for CSS Manipulation
+===============================
+
+👉 1. Change CSS using .css():
+   $("h1").css("color", "green");          // Sets the color to green
+   $("h1").css("font-size", "30px");       // Sets font size
+
+👉 2. Get current CSS value:
+   console.log($("h1").css("color"));      // Gets current color (e.g., "rgb(0, 0, 0)")
+   console.log($("h1").css("font-size"));  // Gets current font size (e.g., "32px")
+
+🧠 Tip:
+- .css("property") → gets value
+- .css("property", "value") → sets value
+
+⚠️ Best Practice:
+Avoid styling directly with JavaScript — it's better to separate behavior (JS) from appearance (CSS).
+
+=============================
+🎯 jQuery Class Manipulation
+=============================
+
+✅ 3. Add a class from CSS:
+   $("h1").addClass("big-title");          // Applies styles defined in .big-title class
+
+✅ 4. Remove a class:
+   $("h1").removeClass("big-title");       // Removes the class
+
+✅ 5. Add multiple classes:
+   $("h1").addClass("big-title margin-50"); // Adds both classes (space-separated)
+
+✅ 6. Check if an element has a class:
+   $("h1").hasClass("margin-50");          // Returns true or false
+
+💡 Summary:
+- Use .css() for quick inline styles (not recommended long term)
+- Use .addClass() / .removeClass() to manage styles via CSS
+- Use .hasClass() to check if a class is applied
+*/

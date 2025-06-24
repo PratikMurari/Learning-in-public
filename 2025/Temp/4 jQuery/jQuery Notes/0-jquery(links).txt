@@ -1,0 +1,14 @@
+Recommended jquery (CDN)
+https://developers.google.com/speed/libraries#jquery
+
+
+Standard jquery
+https://jquery.com/
+
+
+Minified jquery
+https://code.jquery.com/jquery-3.7.1.min.js
+
+
+Minifier used
+https://www.minifier.org/

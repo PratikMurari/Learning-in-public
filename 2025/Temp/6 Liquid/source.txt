@@ -1,0 +1,6 @@
+
+Shopify Liquid Documentation
+https://shopify.github.io/liquid/
+
+Cheat Sheet for Shopify Liquid
+https://www.shopify.com/partners/shopify-cheat-sheet

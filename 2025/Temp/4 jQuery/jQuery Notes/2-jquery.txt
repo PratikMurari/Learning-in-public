@@ -1,0 +1,22 @@
+============================================
+🧠 JavaScript vs jQuery: Selecting Elements
+============================================
+
+👉 In JavaScript:
+- To select ONE element: 
+    document.querySelector("h1");
+
+- To select ALL matching elements:
+    document.querySelectorAll("button");
+
+👉 In jQuery (uses $ symbol):
+- To select ONE or ALL elements:
+    $("h1")          // Selects all <h1> elements
+    $(".title")      // Selects all elements with class 'title'
+    $("#header")     // Selects the element with id 'header'
+    $("div h1")      // Selects <h1> inside <div>
+    $("button")      // Selects ALL buttons
+
+✅ jQuery selectors work exactly like CSS selectors.
+✅ jQuery automatically handles single or multiple elements with the same syntax.
+✅ It's shorter and more convenient than plain JavaScript.

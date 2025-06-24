@@ -1,0 +1,37 @@
+=====================================
+🆕 jQuery: Adding & Removing Elements
+=====================================
+
+👉 1. Add elements BEFORE or AFTER an existing element:
+
+   $("h1").before("<button>New</button>");   // Adds button BEFORE <h1>
+   $("h1").after("<button>New</button>");    // Adds button AFTER <h1>
+
+👉 2. Add elements INSIDE an element:
+
+   $("h1").prepend("<button>New</button>");  // Adds button INSIDE <h1>, BEFORE the text
+   $("h1").append("<button>New</button>");   // Adds button INSIDE <h1>, AFTER the text
+
+📌 Summary:
+- before() → Outside, before opening tag
+- after() → Outside, after closing tag
+- prepend() → Inside, right after opening tag
+- append() → Inside, just before closing tag
+
+======================
+🗑️ Removing Elements
+======================
+
+👉 Remove all matching elements:
+   $("button").remove();                    // Deletes all <button> elements on the page
+
+✅ You can use .remove() on any element selected via jQuery.
+
+======================
+💡 Summary:
+======================
+- Add new HTML on the fly with before(), after(), prepend(), append()
+- Remove elements easily with .remove()
+- No need to manually edit your HTML file
+
+Next up: Animations and visual effects with jQuery!

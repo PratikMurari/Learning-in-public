@@ -1,0 +1,33 @@
+=================================
+🔧 jQuery Attribute Manipulation
+=================================
+
+👉 1. Get the value of an attribute:
+   $("img").attr("src");                    // Gets the 'src' attribute of the <img>
+   $("a").attr("href");                     // Gets the 'href' attribute of the <a>
+   $("h1").attr("class");                   // Gets the list of classes applied to <h1>
+
+👉 2. Set the value of an attribute:
+   $("a").attr("href", "https://yahoo.com"); // Changes the href of all <a> tags to Yahoo
+
+🧠 .attr("name")   → Gets the value of the attribute  
+🧠 .attr("name", "value") → Sets the attribute to the given value
+
+📌 Examples:
+   - $("img").attr("src", "new-image.png");
+   - $("a").attr("target", "_blank");       // Opens link in new tab
+   - $("h1").attr("class");                 // Returns string: "big-title margin-50"
+
+======================
+💡 Summary:
+======================
+✅ Use .attr() to read or modify any HTML attribute
+✅ Works for src, href, class, id, alt, title, etc.
+✅ Behavior depends on number of arguments:
+   - 1 argument → get
+   - 2 arguments → set
+
+🧪 Tip: Useful for debugging (e.g., checking missing images or wrong links)
+
+Next up: We'll look at DOM event handling with jQuery!
+
