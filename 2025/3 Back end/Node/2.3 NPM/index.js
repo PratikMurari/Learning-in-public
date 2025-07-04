@@ -18,3 +18,8 @@
 import { randomSuperhero } from "superheroes";
 const name = randomSuperhero();
 console.log(`I am ${name}.`);
+
+// My code (outdated, but still works)
+// import {randomSuperhero} from 'superheroes';
+// let name = randomSuperhero();
+// console.log("I am " + name);
