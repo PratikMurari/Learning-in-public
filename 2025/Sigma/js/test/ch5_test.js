@@ -16,9 +16,18 @@
 //     console.log(num);
 // }
 
+
 //Chapter 5 - Q3
+// let arr = [5,10,15,16,20,40];
+// let n = arr.filter((x)=>{
+//   return x % 10 == 0;
+// });
+// console.log(n)
+
+
+//Chapter 5 - Q4
 let arr = [5,10,15,16,20,40];
-let n = arr.filter((x)=>{
-  return x % 10 == 0;
+let n = arr.map((x)=>{
+  return x * x;
 });
-console.log(n)
+console.log
