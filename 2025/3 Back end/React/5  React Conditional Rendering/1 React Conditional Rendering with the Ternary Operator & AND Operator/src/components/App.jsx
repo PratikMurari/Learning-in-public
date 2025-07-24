@@ -1,18 +1,37 @@
+//https://en.wikipedia.org/wiki/Single-responsibility_principle
+
 import React from "react";
 import Login from "./Login";
 
-var isLoggedIn = false;
+var LoggedIn = true;
+const currentTime = new Date().getHours();
 
-const currentTime = new Date(2019, 11, 1, 9).getHours();
-console.log(currentTime);
+// function render() {
+//   if (LoggedIn === true) {
+//     return <h1>Hello</h1>;
+//   } else {
+//     return <Login />;
+//   }
+// }
 
 function App() {
   return (
     <div className="container">
-      {/*Ternary Operator*/}
-      {isLoggedIn ? <h1>Hello</h1> : <Login />}
-      {/*AND Operator*/}
-      {currentTime > 12 && <h1>Why are you still working?</h1>}
+      {
+        // {render()}
+        //Ternary operator
+        //we will use ternary operator
+        //condition ? Do if true : Do if false
+        //LoggedIn === true ? <h1>Hello</h1> : <Login />
+        //since it's a boolian we can remove true
+        //LoggedIn ? <h1>Hello</h1> : <Login />
+        //&& operator
+        //now we will use && for react
+        //Condition && Expression
+        //True && Expression
+        //False && Expression
+        currentTime > 12 && <h1>Why you are still here??</h1>
+      }
     </div>
   );
 }
