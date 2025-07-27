@@ -1,3 +1,6 @@
+//Lec 308
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring
+
 // CHALLENGE: uncomment the code below and see the car stats rendered
 // import React from "react";
 // import ReactDOM from "react-dom";
