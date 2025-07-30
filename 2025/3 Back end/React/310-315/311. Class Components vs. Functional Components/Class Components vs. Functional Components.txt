@@ -1,3 +1,11 @@
+State and Lifecycle
+https://legacy.reactjs.org/docs/state-and-lifecycle.html
+
+Introducing Hooks
+https://legacy.reactjs.org/docs/hooks-intro.html
+
+Hooks FAQ
+https://legacy.reactjs.org/docs/hooks-faq.html#should-i-use-hooks-classes-or-a-mix-of-both
 
 React: Class Components vs Functional Components (with Hooks)
 
@@ -66,3 +74,4 @@ Key Takeaways
   - Functional components can handle state and side effects.
   - Code is shorter, cleaner, and easier to reuse.
 - React’s direction: Prefer functional components + Hooks for new code.
+
