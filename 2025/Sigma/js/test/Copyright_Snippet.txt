@@ -1,0 +1,11 @@
+How to use:
+I noticed you currently use an <h2> for this text. So my code uses the same, 
+though it’s common practice to use a <footer> or <p> for accessibility and semantics. 
+You can simply copy this in place of your existing element, and it will update off the system clock.
+
+
+    <h2 id="copyright" class="elementor-heading-title elementor-size-default"></h2>
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById("copyright").textContent = `© ${year} Hatched Ltd`;
+    </script>
