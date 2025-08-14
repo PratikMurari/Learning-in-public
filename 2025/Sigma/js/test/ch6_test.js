@@ -32,3 +32,25 @@ if (confirm("Do you want to enter your age to check if you can drive?")) {
 } else {
   alert("Alright! Maybe next time.");
 }
+
+//Chapter 6 - Q3
+if (confirm("Do you want to enter your age to check if you can drive?")) {
+  let age = prompt("Please enter your age:");
+
+  if (age !== null) {  
+    age = Number(age);
+
+    if (isNaN(age)) {
+      alert("Please enter a valid number for age.");
+    } else if (age < 0) {
+      alert("Age cannot be negative.");
+      console.error("Error: Negative age entered (" + age + ").");
+    } else if (age >= 18) {
+      alert("You can drive!");
+    } else {
+      alert("You cannot drive yet.");
+    }
+  }
+} else {
+  alert("Alright! Maybe next time.");
+}
