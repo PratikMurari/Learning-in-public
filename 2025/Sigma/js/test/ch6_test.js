@@ -1,7 +1,8 @@
 //Chapter 6 - Q1
 let age = prompt("Please enter your age:");
 
-if (age !== null) {  // Check if the user didn't click Cancel
+if (age !== null) {
+  // Check if the user didn't click Cancel
   age = Number(age);
 
   if (isNaN(age)) {
@@ -13,13 +14,13 @@ if (age !== null) {  // Check if the user didn't click Cancel
   }
 }
 
-
 //Chapter 6 - Q2
 // Ask if the user wants to see the prompt
 if (confirm("Do you want to enter your age to check if you can drive?")) {
   let age = prompt("Please enter your age:");
 
-  if (age !== null) {  // Check if the user didn't click Cancel
+  if (age !== null) {
+    // Check if the user didn't click Cancel
     age = Number(age);
 
     if (isNaN(age)) {
@@ -34,12 +35,11 @@ if (confirm("Do you want to enter your age to check if you can drive?")) {
   alert("Alright! Maybe next time.");
 }
 
-
 //Chapter 6 - Q3
 if (confirm("Do you want to enter your age to check if you can drive?")) {
   let age = prompt("Please enter your age:");
 
-  if (age !== null) {  
+  if (age !== null) {
     age = Number(age);
 
     if (isNaN(age)) {
@@ -57,12 +57,11 @@ if (confirm("Do you want to enter your age to check if you can drive?")) {
   alert("Alright! Maybe next time.");
 }
 
-
 //Chapter 6 - Q4
 if (confirm("Do you want to enter your age to check if you can drive?")) {
   let age = prompt("Please enter your age:");
 
-  if (age !== null) {  
+  if (age !== null) {
     age = Number(age);
 
     if (isNaN(age)) {
@@ -83,12 +82,11 @@ if (confirm("Do you want to enter your age to check if you can drive?")) {
   alert("Alright! Maybe next time.");
 }
 
-
 //Chapter 6 - Q5
 if (confirm("Do you want to enter your age to check if you can drive?")) {
   let age = prompt("Please enter your age:");
 
-  if (age !== null) {  
+  if (age !== null) {
     age = Number(age);
 
     if (isNaN(age)) {
@@ -110,7 +108,9 @@ if (confirm("Do you want to enter your age to check if you can drive?")) {
 }
 
 // Ask user to change background color AFTER all age checks and possible redirect
-let color = prompt("Enter a color for the background (e.g., yellow, red, blue, green):");
+let color = prompt(
+  "Enter a color for the background (e.g., yellow, red, blue, green):"
+);
 
 if (color !== null && color.trim() !== "") {
   document.body.style.backgroundColor = color.trim();
