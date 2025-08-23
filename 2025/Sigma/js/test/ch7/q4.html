@@ -1,0 +1,45 @@
+//Method 1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Change all li backgrounds</title>
+</head>
+<body>
+  <ul>
+    <li>Alpha</li>
+    <li>Beta</li>
+    <li>Gamma</li>
+  </ul>
+
+  <script>
+    // Select all <li> elements and set background to cyan
+    document.querySelectorAll('li').forEach(li => {
+      li.style.backgroundColor = 'cyan';
+    });
+  </script>
+</body>
+</html>
+
+//Method 2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Change all li backgrounds</title>
+  <style>
+    .cyan-bg { background-color: cyan; }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>Alpha</li>
+    <li>Beta</li>
+    <li>Gamma</li>
+  </ul>
+
+  <script>
+    document.querySelectorAll('li').forEach(li => li.classList.add('cyan-bg'));
+  </script>
+</body>
+</html>
