@@ -1,0 +1,17 @@
+Question:
+Q5. Which of the following is used to look for the farthest ancestor that matches a given CSS selector?
+(a) matches (b) closest (c) contains (d) none of these
+
+Answer (chosen):
+(d) none of these
+
+Explanation:
+
+matches: Tests whether the current element itself matches a selector; it does not traverse ancestors.
+
+closest: Returns the nearest ancestor (or the element itself) matching the selector, not the farthest one.
+
+contains: Checks node containment (whether one node contains another); it is not a selector-matching method for ancestors.
+There is no built-in DOM API that directly retrieves the farthest matching ancestor in one call.
+
+
