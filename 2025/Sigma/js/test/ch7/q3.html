@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Change Color Example</title>
+  </head>
+  <body>
+    <div id="parent">
+      <div>Child 1</div>
+      <div>Child 2</div>
+      <div>Child 3</div>
+    </div>
+
+    <script>
+      // Select the parent element
+      const parent = document.getElementById("parent");
+
+      // Get all children of the parent
+      const children = parent.children;
+
+      // Change color of the first child to green
+      children[0].style.color = "green";
+
+      // Change color of the last child to green
+      children[children.length - 1].style.color = "green";
+    </script>
+  </body>
+</html>
