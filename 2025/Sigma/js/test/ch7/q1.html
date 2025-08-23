@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Navbar Example</title>
+    <style>
+      /* Basic navbar styling */
+      #navbar {
+        display: flex;
+        list-style-type: none;
+        background-color: #333;
+        padding: 10px;
+      }
+      #navbar li {
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="navbar">
+      <li>Home</li>
+      <li>About</li>
+      <li>Services</li>
+      <li>Contact</li>
+    </ul>
+
+    <script>
+      // Select the first element of the navbar and change its color to red
+      const navbar = document.getElementById("navbar");
+      const firstItem = navbar.querySelector("li:first-child");
+      firstItem.style.color = "red";
+    </script>
+  </body>
+</html>
