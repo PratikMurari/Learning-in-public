@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookmark Manager</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      #bookmarkList a {
+        display: block;
+        margin: 5px 0;
+        color: blue;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Bookmark Manager</h2>
+
+    <label for="siteName">Website Name:</label>
+    <input type="text" id="siteName" placeholder="Enter website name" />
+    <br /><br />
+
+    <label for="siteURL">Website URL:</label>
+    <input type="url" id="siteURL" placeholder="https://example.com" />
+    <br /><br />
+
+    <button id="addBookmark">Add Bookmark</button>
+
+    <h3>Your Bookmarks:</h3>
+    <div id="bookmarkList"></div>
+
+    <script>
+      const addBookmarkButton = document.getElementById("addBookmark");
+      const bookmarkList = document.getElementById("bookmarkList");
+
+      addBookmarkButton.addEventListener("click", () => {
+        const name = document.getElementById("siteName").value.trim();
+        const url = document.getElementById("siteURL").value.trim();
+
+        if (!name || !url) {
+          alert("Please enter both website name and URL.");
+          return;
+        }
+
+        // Create a new anchor element
+        const link = document.createElement("a");
+        link.href = url;
+        link.textContent = name;
+        link.target = "_blank"; // Open link in new tab
+
+        // Add the link to the bookmark list
+        bookmarkList.appendChild(link);
+
+        // Clear input fields
+        document.getElementById("siteName").value = "";
+        document.getElementById("siteURL").value = "";
+      });
+    </script>
+  </body>
+</html>
