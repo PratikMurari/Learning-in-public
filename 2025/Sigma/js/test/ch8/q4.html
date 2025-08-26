@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookmark Manager with Event Listeners</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #bookmarkList a {
+      display: block;
+      margin: 5px 0;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Bookmark Manager</h2>
+
+<label for="siteName">Website Name:</label>
+<input type="text" id="siteName" placeholder="Enter website name" />
+<br /><br />
+
+<label for="siteURL">Website URL:</label>
+<input type="url" id="siteURL" placeholder="https://example.com" />
+<br /><br />
+
+<button id="addBookmark">Add Bookmark</button>
+
+<h3>Your Bookmarks:</h3>
+<div id="bookmarkList"></div>
+
+<script>
+  // Get reference to the Add Bookmark button
+  const addBookmarkButton = document.getElementById('addBookmark');
+
+  // Register an event listener for the click event on the button
+  addBookmarkButton.addEventListener('click', function() {
+    const nameInput = document.getElementById('siteName');
+    const urlInput = document.getElementById('siteURL');
+
+    const name = nameInput.value.trim();
+    const url = urlInput.value.trim();
+
+    if (!name || !url) {
+      alert('Please enter both website name and URL.');
+      return;
+    }
+
+    // Create anchor tag for the bookmark link
+    const link = document.createElement('a');
+    link.href = url;
+    link.textContent = name;
+    link.target = '_blank'; // Open link in new tab
+
+    // Append the link to the bookmark list container
+    document.getElementById('bookmarkList').appendChild(link);
+
+    // Clear the input fields
+    nameInput.value = '';
+    urlInput.value = '';
+  });
+</script>
+
+</body>
+</html>
