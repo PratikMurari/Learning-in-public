@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Bird Letter Delivery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #87CEEB, #E0F7FA);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #game-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #bird {
+            position: absolute;
+            font-size: 40px;
+            top: 20%;
+            right: -50px;
+            transition: right 8s linear, top 2s ease-in-out;
+            z-index: 10;
+        }
+        
+        #letter {
+            position: absolute;
+            width: 120px;
+            height: 80px;
+            background: #f9f3c9;
+            border: 2px solid #d4af37;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #d4af37;
+            z-index: 5;
+            transition: top 3s ease-in-out;
+        }
+        
+        #open-btn {
+            position: absolute;
+            padding: 12px 24px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 20;
+            transition: all 0.3s ease;
+        }
+        
+        #open-btn:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+        
+        #letter-content {
+            position: absolute;
+            width: 300px;
+            height: 400px;
+            background: #f9f3c9;
+            border: 2px solid #d4af37;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            display: none;
+            flex-direction: column;
+            z-index: 25;
+            overflow-y: auto;
+        }
+        
+        #close-btn {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        #letter-text {
+            margin-top: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .instructions {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            color: #333;
+            width: 100%;
+            font-size: 16px;
+        }
+        
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+        
+        .cloud:before, .cloud:after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="bird">🐦</div>
+        <div id="letter">✉️</div>
+        <button id="open-btn">Open Letter</button>
+        <div id="letter-content">
+            <button id="close-btn">✕</button>
+            <div id="letter-text"></div>
+        </div>
+        <div class="instructions">Wait for the bird to deliver the letter, then click to open it!</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bird = document.getElementById('bird');
+            const letter = document.getElementById('letter');
+            const openBtn = document.getElementById('open-btn');
+            const letterContent = document.getElementById('letter-content');
+            const letterText = document.getElementById('letter-text');
+            const closeBtn = document.getElementById('close-btn');
+            const gameContainer = document.getElementById('game-container');
+            
+            // Create clouds
+            createClouds();
+            
+            // Start the animation
+            setTimeout(() => {
+                bird.style.right = 'calc(100% - 100px)';
+                bird.style.top = '30%';
+                
+                setTimeout(() => {
+                    // Bird drops the letter
+                    bird.style.top = '40%';
+                    
+                    setTimeout(() => {
+                        letter.style.display = 'flex';
+                        letter.style.top = '40%';
+                        letter.style.left = 'calc(100% - 150px)';
+                        
+                        // Letter falls down
+                        setTimeout(() => {
+                            letter.style.top = '70%';
+                            
+                            // Show open button
+                            setTimeout(() => {
+                                openBtn.style.display = 'block';
+                                openBtn.style.left = '50%';
+                                openBtn.style.bottom = '20%';
+                                openBtn.style.transform = 'translateX(-50%)';
+                            }, 1000);
+                        }, 500);
+                    }, 1000);
+                }, 4000);
+            }, 1000);
+            
+            // Open letter button
+            openBtn.addEventListener('click', function() {
+                openBtn.style.display = 'none';
+                letter.style.display = 'none';
+                
+                // Show letter content with Lorem Ipsum
+                letterContent.style.display = 'flex';
+                letterText.innerHTML = `
+                    <h2>Dear Friend,</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <p>With love,<br>Your Friend</p>
+                `;
+            });
+            
+            // Close letter
+            closeBtn.addEventListener('click', function() {
+                letterContent.style.display = 'none';
+                
+                // Reset animation after a delay
+                setTimeout(resetAnimation, 2000);
+            });
+            
+            function resetAnimation() {
+                // Reset bird position
+                bird.style.transition = 'none';
+                bird.style.right = '-50px';
+                bird.style.top = '20%';
+                
+                // Force reflow
+                void bird.offsetWidth;
+                
+                // Restart animation
+                bird.style.transition = 'right 8s linear, top 2s ease-in-out';
+                
+                setTimeout(() => {
+                    bird.style.right = 'calc(100% - 100px)';
+                    bird.style.top = '30%';
+                    
+                    setTimeout(() => {
+                        // Bird drops the letter again
+                        bird.style.top = '40%';
+                        
+                        setTimeout(() => {
+                            letter.style.display = 'flex';
+                            letter.style.top = '40%';
+                            letter.style.left = 'calc(100% - 150px)';
+                            
+                            // Letter falls down
+                            setTimeout(() => {
+                                letter.style.top = '70%';
+                                
+                                // Show open button
+                                setTimeout(() => {
+                                    openBtn.style.display = 'block';
+                                }, 1000);
+                            }, 500);
+                        }, 1000);
+                    }, 4000);
+                }, 100);
+            }
+            
+            function createClouds() {
+                const container = document.getElementById('game-container');
+                
+                for (let i = 0; i < 5; i++) {
+                    const cloud = document.createElement('div');
+                    cloud.classList.add('cloud');
+                    
+                    // Random properties for clouds
+                    const size = Math.random() * 50 + 30;
+                    const posY = Math.random() * 60 + 10;
+                    const posX = Math.random() * 100;
+                    const duration = Math.random() * 40 + 30;
+                    
+                    cloud.style.width = `${size}px`;
+                    cloud.style.height = `${size / 1.5}px`;
+                    cloud.style.top = `${posY}%`;
+                    cloud.style.left = `${posX}%`;
+                    cloud.style.animation = `float ${duration}s linear infinite`;
+                    
+                    // Create cloud pseudo-elements
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        .cloud:nth-child(${i + 1})::before {
+                            width: ${size / 2}px;
+                            height: ${size / 2}px;
+                            top: -${size / 4}px;
+                            left: ${size / 4}px;
+                        }
+                        
+                        .cloud:nth-child(${i + 1})::after {
+                            width: ${size / 3}px;
+                            height: ${size / 3}px;
+                            top: -${size / 6}px;
+                            right: ${size / 4}px;
+                        }
+                        
+                        @keyframes float {
+                            0% { left: ${posX}%; }
+                            100% { left: ${posX - 100}%; }
+                        }
+                    `;
+                    
+                    document.head.appendChild(style);
+                    container.appendChild(cloud);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
