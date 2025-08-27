@@ -142,15 +142,39 @@
             width: 100%;
             height: 100%;
             filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
-            animation: wingFlap 0.3s ease-in-out infinite alternate;
         }
 
-        @keyframes wingFlap {
+        .wing-left {
+            transform-origin: 60px 45px;
+            animation: flapLeft 0.4s ease-in-out infinite;
+        }
+
+        .wing-right {
+            transform-origin: 60px 45px;
+            animation: flapRight 0.4s ease-in-out infinite;
+        }
+
+        @keyframes flapLeft {
             0% {
-                transform: scaleY(1);
+                transform: rotate(-20deg);
+            }
+            50% {
+                transform: rotate(20deg);
             }
             100% {
-                transform: scaleY(0.9) scaleX(1.05);
+                transform: rotate(-20deg);
+            }
+        }
+
+        @keyframes flapRight {
+            0% {
+                transform: rotate(20deg);
+            }
+            50% {
+                transform: rotate(-20deg);
+            }
+            100% {
+                transform: rotate(20deg);
             }
         }
 
@@ -355,40 +379,53 @@
     <div class="sparkle" style="top: 70%; left: 85%; animation-delay: 2s;"></div>
 
     <div class="dove">
-        <svg viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Dove body -->
-            <ellipse cx="60" cy="45" rx="22" ry="12" fill="white" stroke="#ddd" stroke-width="1"/>
+            <ellipse cx="70" cy="45" rx="18" ry="10" fill="white" stroke="#ddd" stroke-width="1"/>
             
-            <!-- Upper wing (spread upward for flying) -->
-            <path d="M38 40 Q20 15 15 20 Q25 30 45 35 Q50 38 38 40 Z" fill="white" stroke="#ccc" stroke-width="1"/>
+            <!-- Left wing (flapping) -->
+            <g class="wing-left">
+                <path d="M52 40 Q25 15 10 25 Q20 35 35 42 Q45 45 52 40 Z" fill="white" stroke="#ccc" stroke-width="1"/>
+                <!-- Wing feather details -->
+                <path d="M45 35 Q30 20 25 25 Q35 32 45 35" fill="none" stroke="#bbb" stroke-width="0.8"/>
+                <path d="M40 38 Q25 23 20 28 Q30 35 40 38" fill="none" stroke="#bbb" stroke-width="0.8"/>
+                <path d="M35 40 Q20 25 15 30 Q25 37 35 40" fill="none" stroke="#bbb" stroke-width="0.8"/>
+                <!-- Wing tip feathers -->
+                <path d="M15 28 Q8 20 5 25 Q12 30 15 28" fill="white" stroke="#aaa" stroke-width="0.5"/>
+                <path d="M18 32 Q11 24 8 29 Q15 34 18 32" fill="white" stroke="#aaa" stroke-width="0.5"/>
+            </g>
             
-            <!-- Lower wing (spread downward) -->
-            <path d="M38 50 Q20 65 15 60 Q25 55 45 50 Q50 48 38 50 Z" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
-            
-            <!-- Wing details/feathers -->
-            <path d="M35 38 Q28 25 25 28 Q30 35 35 38" fill="none" stroke="#bbb" stroke-width="0.5"/>
-            <path d="M40 36 Q33 23 30 26 Q35 33 40 36" fill="none" stroke="#bbb" stroke-width="0.5"/>
-            <path d="M35 52 Q28 62 25 60 Q30 55 35 52" fill="none" stroke="#bbb" stroke-width="0.5"/>
-            <path d="M40 54 Q33 64 30 62 Q35 57 40 54" fill="none" stroke="#bbb" stroke-width="0.5"/>
+            <!-- Right wing (flapping) -->
+            <g class="wing-right">
+                <path d="M88 40 Q115 15 130 25 Q120 35 105 42 Q95 45 88 40 Z" fill="white" stroke="#ccc" stroke-width="1"/>
+                <!-- Wing feather details -->
+                <path d="M95 35 Q110 20 115 25 Q105 32 95 35" fill="none" stroke="#bbb" stroke-width="0.8"/>
+                <path d="M100 38 Q115 23 120 28 Q110 35 100 38" fill="none" stroke="#bbb" stroke-width="0.8"/>
+                <path d="M105 40 Q120 25 125 30 Q115 37 105 40" fill="none" stroke="#bbb" stroke-width="0.8"/>
+                <!-- Wing tip feathers -->
+                <path d="M125 28 Q132 20 135 25 Q128 30 125 28" fill="white" stroke="#aaa" stroke-width="0.5"/>
+                <path d="M122 32 Q129 24 132 29 Q125 34 122 32" fill="white" stroke="#aaa" stroke-width="0.5"/>
+            </g>
             
             <!-- Dove head -->
-            <ellipse cx="78" cy="38" rx="10" ry="8" fill="white" stroke="#ddd" stroke-width="1"/>
+            <ellipse cx="85" cy="40" rx="8" ry="6" fill="white" stroke="#ddd" stroke-width="1"/>
             
             <!-- Dove beak -->
-            <path d="M88 38 L95 36 L92 40 Z" fill="#ffb347" stroke="#daa520" stroke-width="0.5"/>
+            <path d="M93 40 L100 38 L97 42 Z" fill="#ffb347" stroke="#daa520" stroke-width="0.5"/>
             
             <!-- Dove eye -->
-            <circle cx="82" cy="35" r="1.5" fill="black"/>
+            <circle cx="88" cy="37" r="1.2" fill="black"/>
             
-            <!-- Neck -->
-            <path d="M68 42 Q72 38 78 38 Q75 45 68 47" fill="white" stroke="#ddd" stroke-width="1"/>
+            <!-- Neck connection -->
+            <path d="M77 42 Q80 38 85 40 Q82 45 77 45" fill="white" stroke="#ddd" stroke-width="1"/>
             
-            <!-- Tail feathers (more realistic) -->
-            <path d="M38 50 Q20 52 18 58 Q25 55 35 52" fill="white" stroke="#ccc" stroke-width="1"/>
-            <path d="M40 48 Q22 50 20 56 Q27 53 37 50" fill="#f8f8f8" stroke="#ccc" stroke-width="1"/>
+            <!-- Tail feathers -->
+            <path d="M52 50 Q35 55 30 60 Q40 58 50 52" fill="white" stroke="#ccc" stroke-width="1"/>
+            <path d="M54 48 Q37 53 32 58 Q42 56 52 50" fill="#f8f8f8" stroke="#ccc" stroke-width="1"/>
+            <path d="M56 46 Q39 51 34 56 Q44 54 54 48" fill="white" stroke="#ccc" stroke-width="1"/>
             
-            <!-- Letter in beak -->
-            <rect x="92" y="35" width="8" height="6" fill="#f8f5f1" stroke="#d4af37" stroke-width="0.5" rx="1"/>
+            <!-- Small letter in beak -->
+            <rect x="97" y="37" width="6" height="4" fill="#f8f5f1" stroke="#d4af37" stroke-width="0.3" rx="0.5"/>
         </svg>
     </div>
 
