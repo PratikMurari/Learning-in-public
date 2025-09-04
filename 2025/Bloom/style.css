@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", serif;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+}
+
+/* Animated cloud background */
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  opacity: 0.6;
+  animation: float 20s infinite linear;
+}
+
+.cloud:before {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+}
+
+.cloud:after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+}
+
+.cloud1 {
+  width: 100px;
+  height: 40px;
+  top: 20%;
+  animation-duration: 25s;
+  animation-delay: -5s;
+}
+
+.cloud1:before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 10px;
+}
+
+.cloud1:after {
+  width: 60px;
+  height: 40px;
+  top: -15px;
+  right: 10px;
+}
+
+.cloud2 {
+  width: 80px;
+  height: 30px;
+  top: 40%;
+  animation-duration: 30s;
+  animation-delay: -10s;
+}
+
+.cloud2:before {
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: 15px;
+}
+
+.cloud2:after {
+  width: 50px;
+  height: 35px;
+  top: -10px;
+  right: 15px;
+}
+
+.cloud3 {
+  width: 120px;
+  height: 50px;
+  top: 60%;
+  animation-duration: 35s;
+  animation-delay: -15s;
+}
+
+.cloud3:before {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: 20px;
+}
+
+.cloud3:after {
+  width: 70px;
+  height: 50px;
+  top: -20px;
+  right: 20px;
+}
+
+@keyframes float {
+  0% {
+    left: -150px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Dove animation */
+.dove {
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  z-index: 10;
+  left: -150px;
+  top: 25%;
+  animation: flyIn 4s ease-in-out forwards;
+}
+
+.dove svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.3))
+    drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.5));
+}
+
+.wing-left {
+  transform-origin: 80px 50px;
+  animation: flapLeft 0.4s ease-in-out infinite;
+}
+
+.wing-right {
+  transform-origin: 80px 50px;
+  animation: flapRight 0.4s ease-in-out infinite;
+}
+
+@keyframes flapLeft {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes flapRight {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes flyIn {
+  0% {
+    left: -150px;
+    top: 25%;
+    transform: scale(0.5);
+  }
+  50% {
+    left: 42%;
+    top: 20%;
+    transform: scale(1);
+  }
+  70% {
+    left: 47%;
+    top: 25%;
+    transform: scale(1);
+  }
+  100% {
+    left: 120%;
+    top: 15%;
+    transform: scale(0.9);
+  }
+}
+
+/* Letter animation */
+.letter {
+  position: absolute;
+  width: 70px;
+  height: 60px;
+  z-index: 9;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: dropLetter 2s ease-in forwards;
+  animation-delay: 2s;
+}
+
+.letter svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes dropLetter {
+  0% {
+    opacity: 1;
+    top: 30%;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    top: 60%;
+    transform: translateX(-50%) rotate(10deg);
+  }
+}
+
+/* Button */
+.open-button {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeInButton 1s ease-in forwards;
+  animation-delay: 4s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 15;
+}
+
+.open-button:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #ee5a52, #ff6b6b);
+}
+
+@keyframes fadeInButton {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0px);
+  }
+}
+
+/* Letter content modal */
+.letter-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.letter-content {
+  background: #f8f5f1;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80%;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow-y: auto;
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.letter-header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #5a5a5a;
+  font-style: italic;
+  font-size: 24px;
+}
+
+.letter-text {
+  line-height: 1.8;
+  color: #4a4a4a;
+  font-size: 16px;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+.letter-signature {
+  text-align: right;
+  font-style: italic;
+  color: #666;
+  margin-top: 20px;
+}
+
+/* Sparkle effects */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
