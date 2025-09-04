@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dove Letter Delivery</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="clouds">
+      <div class="cloud cloud1"></div>
+      <div class="cloud cloud2"></div>
+      <div class="cloud cloud3"></div>
+    </div>
+
+    <!-- Sparkles -->
+    <div class="sparkle" style="top: 20%; left: 10%; animation-delay: 0s"></div>
+    <div
+      class="sparkle"
+      style="top: 40%; left: 80%; animation-delay: 0.5s"
+    ></div>
+    <div class="sparkle" style="top: 60%; left: 15%; animation-delay: 1s"></div>
+    <div
+      class="sparkle"
+      style="top: 25%; left: 70%; animation-delay: 1.5s"
+    ></div>
+    <div class="sparkle" style="top: 70%; left: 85%; animation-delay: 2s"></div>
+
+    <div class="dove">
+      <svg viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Dove body with gradient -->
+        <defs>
+          <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color: #ffffff; stop-opacity: 1" />
+            <stop offset="50%" style="stop-color: #f8f8f8; stop-opacity: 1" />
+            <stop offset="100%" style="stop-color: #f0f0f0; stop-opacity: 1" />
+          </linearGradient>
+          <linearGradient id="wingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color: #ffffff; stop-opacity: 1" />
+            <stop offset="70%" style="stop-color: #f5f5f5; stop-opacity: 1" />
+            <stop offset="100%" style="stop-color: #e8e8e8; stop-opacity: 1" />
+          </linearGradient>
+          <radialGradient id="eyeGradient" cx="50%" cy="30%" r="50%">
+            <stop offset="0%" style="stop-color: #333; stop-opacity: 1" />
+            <stop offset="100%" style="stop-color: #000; stop-opacity: 1" />
+          </radialGradient>
+        </defs>
+
+        <ellipse
+          cx="80"
+          cy="50"
+          rx="22"
+          ry="12"
+          fill="url(#bodyGradient)"
+          stroke="#ddd"
+          stroke-width="1.5"
+        />
+
+        <!-- Left wing (flapping) -->
+        <g class="wing-left">
+          <path
+            d="M58 45 Q25 15 8 28 Q18 35 32 42 Q45 48 58 45 Z"
+            fill="url(#wingGradient)"
+            stroke="#ccc"
+            stroke-width="1.5"
+          />
+          <!-- Primary feathers -->
+          <path
+            d="M32 35 Q18 18 12 25 Q22 30 32 35"
+            fill="none"
+            stroke="#aaa"
+            stroke-width="1.2"
+          />
+          <path
+            d="M28 38 Q14 21 8 28 Q18 33 28 38"
+            fill="none"
+            stroke="#aaa"
+            stroke-width="1.2"
+          />
+          <path
+            d="M24 41 Q10 24 4 31 Q14 36 24 41"
+            fill="none"
+            stroke="#aaa"
+            stroke-width="1.2"
+          />
+          <!-- Secondary feathers -->
+          <path
+            d="M40 42 Q28 28 22 32 Q32 37 40 42"
+            fill="none"
+            stroke="#bbb"
+            stroke-width="1"
+          />
+          <path
+            d="M45 44 Q33 30 27 34 Q37 39 45 44"
+            fill="none"
+            stroke="#bbb"
+            stroke-width="1"
+          />
+          <!-- Wing edge feathers -->
+          <path
+            d="M15 32 Q8 22 5 28 Q12 35 15 32"
+            fill="url(#wingGradient)"
+            stroke="#999"
+            stroke-width="1"
+          />
+          <path
+            d="M12 36 Q5 26 2 32 Q9 39 12 36"
+            fill="url(#wingGradient)"
+            stroke="#999"
+            stroke-width="1"
+          />
+          <path
+            d="M18 29 Q11 19 8 25 Q15 32 18 29"
+            fill="url(#wingGradient)"
+            stroke="#999"
+            stroke-width="1"
+          />
+        </g>
+
+        <!-- Right wing (flapping) -->
+        <g class="wing-right">
+          <path
+            d="M102 45 Q135 15 152 28 Q142 35 128 42 Q115 48 102 45 Z"
+            fill="url(#wingGradient)"
+            stroke="#ccc"
+            stroke-width="1.5"
+          />
+          <!-- Primary feathers -->
+          <path
+            d="M128 35 Q142 18 148 25 Q138 30 128 35"
+            fill="none"
+            stroke="#aaa"
+            stroke-width="1.2"
+          />
+          <path
+            d="M132 38 Q146 21 152 28 Q142 33 132 38"
+            fill="none"
+            stroke="#aaa"
+            stroke-width="1.2"
+          />
+          <path
+            d="M136 41 Q150 24 156 31 Q146 36 136 41"
+            fill="none"
+            stroke="#aaa"
+            stroke-width="1.2"
+          />
+          <!-- Secondary feathers -->
+          <path
+            d="M120 42 Q132 28 138 32 Q128 37 120 42"
+            fill="none"
+            stroke="#bbb"
+            stroke-width="1"
+          />
+          <path
+            d="M115 44 Q127 30 133 34 Q123 39 115 44"
+            fill="none"
+            stroke="#bbb"
+            stroke-width="1"
+          />
+          <!-- Wing edge feathers -->
+          <path
+            d="M145 32 Q152 22 155 28 Q148 35 145 32"
+            fill="url(#wingGradient)"
+            stroke="#999"
+            stroke-width="1"
+          />
+          <path
+            d="M148 36 Q155 26 158 32 Q151 39 148 36"
+            fill="url(#wingGradient)"
+            stroke="#999"
+            stroke-width="1"
+          />
+          <path
+            d="M142 29 Q149 19 152 25 Q145 32 142 29"
+            fill="url(#wingGradient)"
+            stroke="#999"
+            stroke-width="1"
+          />
+        </g>
+
+        <!-- Dove head with gradient -->
+        <ellipse
+          cx="98"
+          cy="45"
+          rx="10"
+          ry="8"
+          fill="url(#bodyGradient)"
+          stroke="#ddd"
+          stroke-width="1.5"
+        />
+
+        <!-- Dove beak with gradient -->
+        <path
+          d="M108 45 L118 42 L115 48 Z"
+          fill="#ffcc5c"
+          stroke="#daa520"
+          stroke-width="1"
+        />
+
+        <!-- Dove eye with gradient and highlight -->
+        <circle cx="102" cy="42" r="2" fill="url(#eyeGradient)" />
+        <circle cx="102.5" cy="41.5" r="0.5" fill="white" opacity="0.8" />
+
+        <!-- Tail feathers with layering -->
+        <path
+          d="M58 55 Q38 62 32 68 Q45 65 56 58"
+          fill="url(#wingGradient)"
+          stroke="#ccc"
+          stroke-width="1.2"
+        />
+        <path
+          d="M60 53 Q40 60 34 66 Q47 63 58 56"
+          fill="#f8f8f8"
+          stroke="#ccc"
+          stroke-width="1.2"
+        />
+        <path
+          d="M62 51 Q42 58 36 64 Q49 61 60 54"
+          fill="url(#wingGradient)"
+          stroke="#ccc"
+          stroke-width="1.2"
+        />
+
+        <!-- Enhanced letter in beak -->
+        <rect
+          x="115"
+          y="42"
+          width="8"
+          height="6"
+          fill="#f8f5f1"
+          stroke="#d4af37"
+          stroke-width="0.8"
+          rx="1"
+        />
+        <path
+          d="M115 42 L119 45 L123 42"
+          fill="none"
+          stroke="#d4af37"
+          stroke-width="0.5"
+        />
+        <circle cx="119" cy="44" r="1" fill="#dc143c" />
+      </svg>
+    </div>
+
+    <div class="letter">
+      <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Letter envelope -->
+        <rect
+          x="5"
+          y="15"
+          width="90"
+          height="55"
+          fill="#f8f5f1"
+          stroke="#d4af37"
+          stroke-width="2.5"
+          rx="4"
+        />
+        <!-- Letter flap -->
+        <path
+          d="M5 15 L50 42 L95 15"
+          fill="#f0e68c"
+          stroke="#d4af37"
+          stroke-width="2.5"
+        />
+        <!-- Envelope shadow/depth -->
+        <rect
+          x="7"
+          y="17"
+          width="86"
+          height="51"
+          fill="none"
+          stroke="#e6d84a"
+          stroke-width="1"
+          rx="3"
+        />
+        <!-- Wax seal -->
+        <circle cx="50" cy="42" r="10" fill="#dc143c" />
+        <circle cx="50" cy="42" r="8" fill="#b91c3c" />
+        <text
+          x="50"
+          y="47"
+          text-anchor="middle"
+          fill="white"
+          font-size="10"
+          font-family="serif"
+        >
+          ♡
+        </text>
+        <!-- Envelope corner details -->
+        <path d="M10 20 L15 25" stroke="#d4af37" stroke-width="1" />
+        <path d="M90 20 L85 25" stroke="#d4af37" stroke-width="1" />
+      </svg>
+    </div>
+
+    <button class="open-button" onclick="openLetter()">Open Letter ✉️</button>
+
+    <div class="letter-modal" id="letterModal">
+      <div class="letter-content">
+        <button class="close-button" onclick="closeLetter()">&times;</button>
+        <div class="letter-header">A Message From a Carrier Pigeon</div>
+
+        <div class="letter-text">
+          As I read “Tell us why this role speaks to you, in whichever format
+          you feel more comfortable with (text, video, letter, a Bloom, carrier
+          pigeon: surprise us)” on your job description, I knew exactly what to
+          do. As a fellow computer engineer, I built this little webpage to send
+          you my application (p.s. hope you like it, it’s best viewed on
+          desktop). .
+          <br /><br />
+          I’ve always thrived in environments where I could wear multiple hats.
+          In college, I was chosen as Technical Head for my mix of communication
+          skills, calmness under pressure, and ability to get things done. Since
+          then, I’ve managed projects, led teams, and later taken on a General
+          Manager role, each step sharpening my ability to adapt quickly, learn
+          fast, and bring structure where it’s needed most. Alongside this, I’ve
+          built and led communities, hosted events, and developed a knack for
+          making people feel engaged and connected.
+
+          <br /><br />
+          Beyond work, I bring discipline and resilience, from winning a
+          national gold medal in karate to scoring in the 93rd percentile in
+          JEE, one of the toughest engineering exams. These experiences taught
+          me persistence, focus, and how to push outside my comfort zone,
+          qualities I’d bring to Bloom as you scale.
+
+          <br /><br />
+          What excites me about Bloom is the idea of *an app that builds apps*
+          and the culture you’re shaping. I’d love to help grow Bloom, whether
+          automating operations, strengthening community presence, or shaping
+          the “build in public” voice. I can already imagine hosting livestreams
+          where we build cool stuff together.
+
+          <br /><br />
+          I’m open to relocating to Zurich, and while I don’t speak Swiss German
+          yet, I’d be eager to learn it quickly.
+        </div>
+        <div class="letter-signature">
+          Excited to see where this dove lands 🕊️ <br />
+          ~
+          <a href="https://my-portfolio-nine-pi-56.vercel.app/"
+            >Pratik Murari</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
