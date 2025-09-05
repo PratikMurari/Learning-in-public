@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Load script with async/await</title>
+    <script>
+      // Promise-based loader (same as before)
+      function loadScript(src, { crossOrigin } = {}) {
+        return new Promise((resolve, reject) => {
+          const script = document.createElement("script"); // HTMLScriptElement [4]
+          script.src = src;
+          script.async = true; // non-blocking fetch [14]
+          if (crossOrigin) script.crossOrigin = crossOrigin;
+          script.onload = () => resolve(src); // resolve on success [4]
+          script.onerror = () => reject(new Error("Failed to load: " + src)); // reject on error [4]
+          document.head.appendChild(script);
+        });
+      }
+
+      // Async/await usage
+      async function init() {
+        try {
+          await loadScript(
+            "https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"
+          ); // use a real JS URL [14]
+          alert("Script load complete!"); // runs after await resolves [7]
+        } catch (err) {
+          console.error(err);
+          alert("Script failed to load. See console for details."); // await throws on reject [10]
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
+  </head>
+  <body>
+    <h1>Async / await script loader</h1>
+  </body>
+</html>
