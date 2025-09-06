@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Reject after 3 seconds</title>
+    <script>
+      // Promise that rejects after 3 seconds
+      function rejectAfter3s() {
+        return new Promise((_, reject) => {
+          setTimeout(() => {
+            reject(new Error('Rejected after 3 seconds'));
+          }, 3000); // 3s timer [10]
+        });
+      }
+
+      // Use async/await with try/catch
+      async function run() {
+        try {
+          const value = await rejectAfter3s(); // awaiting a rejected promise throws [6]
+          console.log('This will not run:', value); // not reached on reject [15]
+        } catch (err) {
+          console.error('Caught error:', err.message); // handle rejection via try/catch [6]
+          alert('Error: ' + err.message); // optional UI feedback [15]
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', run);
+    </script>
+  </head>
+  <body>
+    <h1>Async/await rejection demo</h1>
+  </body>
+</html>
