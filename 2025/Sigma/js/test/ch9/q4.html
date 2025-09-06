@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Promise.all vs sequential await</title>
+    <script>
+      // Three example async tasks with different durations
+      const taskA = () =>
+        new Promise((res) => setTimeout(() => res("A done"), 1000)); // 1s [3]
+      const taskB = () =>
+        new Promise((res) => setTimeout(() => res("B done"), 1500)); // 1.5s [3]
+      const taskC = () =>
+        new Promise((res) => setTimeout(() => res("C done"), 800)); // 0.8s [3]
+
+      // Helper to measure elapsed time
+      function time(label, fn) {
+        const t0 = performance.now();
+        return fn().then((result) => {
+          const secs = ((performance.now() - t0) / 1000).toFixed(3);
+          console.log(`${label}: ${secs}s`, result);
+          return result;
+        });
+      }
+
+      // 1) Concurrent: start all, await all together
+      async function runConcurrent() {
+        const [a, b, c] = await Promise.all([taskA(), taskB(), taskC()]); // waits for all or rejects on first error [3]
+        alert(`Concurrent results: ${a}, ${b}, ${c}`); // order matches input order, not resolution order [2]
+        return [a, b, c];
+      }
+
+      // 2) Sequential: await each before starting the next
+      async function runSequential() {
+        const a = await taskA(); // runs first, then B starts after A [5]
+        const b = await taskB(); // then C starts after B [5]
+        const c = await taskC();
+        alert(`Sequential results: ${a}, ${b}, ${c}`);
+        return [a, b, c];
+      }
+
+      // Demo both and log timings
+      document.addEventListener("DOMContentLoaded", async () => {
+        await time("Concurrent (Promise.all)", runConcurrent); // ~max(1.0, 1.5, 0.8) ≈ 1.5s [5]
+        await time("Sequential (await one-by-one)", runSequential); // ~1.0 + 1.5 + 0.8 ≈ 3.3s [5][2]
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Promise.all vs sequential await</h1>
+  </body>
+</html>
