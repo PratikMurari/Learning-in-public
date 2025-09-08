@@ -21,3 +21,19 @@ class ComplexNumber {
     return new ComplexNumber(realSum, imaginarySum); // Return new ComplexNumber instance
   }
 }
+
+console.log("Testing ComplexNumber class and add method:");
+// Create two ComplexNumber objects
+const num1 = new ComplexNumber(3, 4);
+const num2 = new ComplexNumber(1, 2);
+
+// Add the two complex numbers
+const sum = num1.add(num2);
+
+//result
+console.log(`First Complex Number: ${num1.real} + ${num1.imaginary}i`); // Will show 3 + 4i
+console.log(`Second Complex Number: ${num2.real} + ${num2.imaginary}i`); // Will show 1 + 2i
+console.log(`Sum: ${sum.real} + ${sum.imaginary}i`); // Will show 4 + 6i
+console.log(`Real part of sum: ${sum.real}`); // Will show 4
+console.log(`Imaginary part of sum: ${sum.imaginary}`); // Will show 6
+console.log("End of test.");
