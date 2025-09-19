@@ -1,0 +1,16 @@
+SECTION 0: Some Imp Sources
+============================
+
+1) Video Sources
+-----------------
+https://youtu.be/30LWjhZzg50?si=El5h2c9Kg3oGS2Pq
+
+
+2) TypeScript Playground
+-------------------------
+https://www.typescriptlang.org/play
+
+
+3) TypeScript Documentation
+--------------------
+https://www.typescriptlang.org/docs/
