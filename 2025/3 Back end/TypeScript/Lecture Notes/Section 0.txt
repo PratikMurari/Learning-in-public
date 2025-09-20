@@ -1,5 +1,5 @@
-SECTION 0: Some Imp Sources
-============================
+SECTION 0: Some Important Resources
+====================================
 
 1) Video Sources
 -----------------
