@@ -43,3 +43,76 @@ SECTION 4: YOUR FIRST INTRO TO TYPESCRIPT DOC
 Basic pattern:
 ```ts
 let variableName: type = value;
+
+*** Example.ts ***
+
+let greetings: string = "Hello, World!";
+console.log(greetings);
+
+*** /Example.ts ***
+
+- ":" defines the type.
+- Types are lowercase (string, not String).
+- If you try greetings = 42; → error: Type 'number' is not assignable to type 'string'.
+
+6) Autocomplete & Error Detection
+-----------------------------------
+- TS gives intelligent suggestions:
+    - Methods only valid for that type (e.g., greetings.toUpperCase()).
+    - Warns if you mistype (e.g., toLowercas() → “Did you mean toLowerCase?”).
+- Same for numbers: no toUpperCase() suggestion because that’s a string method.
+
+Code Along (from video)
+
+7) Code Along (from video)
+---------------------------
+*** Variable.ts ***
+
+let greetings: string = "Hello, TypeScript!";
+console.log(greetings);
+
+let myNum: number = 42;
+console.log(myNum.toFixed(2));   // OK
+// myNum.toUpperCase();          // ❌ Error: not a string
+
+*** /Variable.ts ***
+
+Output => tsc variablesMe.ts
+          node variablesMe.js
+
+8) Error About “Cannot redeclare block-scoped variable”
+--------------------------------------------------------
+- That happens when you run multiple examples in the same file in VS Code.
+- Quick fix (for now): add an empty export {} at the bottom to tell TS it’s a module.
+- Later, you’ll configure tsconfig.json for proper module handling.
+
+💡 Real-world tip: Each demo file should be its own “module” or keep a clean workspace to avoid name clashes.
+
+9) Type Inference (Mentioned for later)
+----------------------------------------
+- If you assign a value without explicitly typing, TS infers it:
+
+*** Example.ts ***
+
+let city = "Paris";   // TS infers: string
+city = 123;           // ❌ Error
+
+*** /Example.ts ***
+
+- For learning, write types manually at first to practice syntax.
+
+10) Current Best Practices (3 yrs later)
+----------------------------------------
+- Use strict: true in tsconfig.json → enables full type safety.
+- Prefer unknown over any if you must accept flexible input.
+- Keep your typescript package up-to-date (v5+ improves autocomplete & error messages).
+- Use an IDE like VS Code for the best TS support.
+
+KEY TAKEAWAY
+-------------
+
+TypeScript is about describing the shape of your data.
+By adding : type after variables, you get:
+- Early error detection
+- Smarter editor help
+- Safer, cleaner JavaScript for production
