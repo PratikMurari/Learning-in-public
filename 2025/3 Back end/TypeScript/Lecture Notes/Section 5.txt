@@ -1,0 +1,122 @@
+SECTION 5: NUMBERS, BOOLEANS & TYPE INFERENCE
+=============================================
+
+1) Focus of This Lesson
+-----------------------
+- Learn how to use `number` and `boolean` in TypeScript.
+- Understand **type inference** (TypeScript automatically detects types).
+- Best practices → when to annotate vs when to let TS infer.
+
+2) Numbers in TypeScript
+------------------------
+- Type name = `number` (singular).
+- No separate `int` or `float`. JS/TS treat all numeric values as `number`.
+
+*** Example.ts ***
+let userId: number = 334466;
+console.log(userId.toFixed(2));   // 334466.00
+*** /Example.ts ***
+
+- Methods available: `toFixed()`, `toExponential()`, `toLocaleString()`.
+- Integers, decimals, negatives — all are `number`.
+
+💡 Tip: Use `bigint` if you need very large integers (`let big: bigint = 123n;`).
+
+3) Booleans
+-----------
+- Type name = `boolean` (lowercase).
+- Values: `true` or `false`.
+
+*** Example.ts ***
+let isLoggedIn: boolean = false;
+console.log(isLoggedIn);   // false
+*** /Example.ts ***
+
+- Booleans have very few methods — they’re just flags.
+
+4) Type Inference
+-----------------
+- When you **declare and assign** a value, TS can guess its type.
+- Writing an explicit type in these cases is redundant.
+
+✅ Better:
+*** Example.ts ***
+let userId = 334466;     // TS infers: number
+let isLoggedIn = true;   // TS infers: boolean
+*** /Example.ts ***
+
+🚫 Overkill:
+*** Example.ts ***
+let userId: number = 334466;   // Too obvious
+*** /Example.ts ***
+
+⚠️ When declaring without initialization, always annotate:
+*** Example.ts ***
+let score: number;
+score = 99;
+*** /Example.ts ***
+
+5) Why Inference Matters
+------------------------
+- Keeps code shorter & cleaner.
+- TS still enforces the type:
+
+*** Example.ts ***
+let age = 25;        // inferred number
+age = "twenty";      // ❌ Error: string not assignable to number
+*** /Example.ts ***
+
+6) Best Practices
+-----------------
+- Use inference if:
+  - Value is assigned right away.
+  - Type is obvious.
+- Use explicit types if:
+  - Declaring without initializing.
+  - For function parameters & returns.
+  - At “boundaries” (e.g., library/public API).
+
+💡 New in TS 5.x:
+- Better inference for `const`, arrays, and objects.
+
+7) Code Recap
+-------------
+*** Example.ts ***
+// Numbers
+let userId = 334466;        // inferred as number
+console.log(userId.toFixed(2));
+
+// Booleans
+let isLoggedIn = false;     // inferred as boolean
+
+// Explicit type when no value yet
+let highScore: number;
+highScore = 100;
+*** /Example.ts ***
+
+8) Output / Compilation
+-----------------------
+- Compile:
+- Types (`: number`, `: boolean`) disappear in compiled JS → they’re for development only.
+
+9) Modern Notes (3 yrs later)
+-----------------------------
+- `bigint` (TS ≥4.0) supports very large integers.
+- Boolean handling unchanged.
+- Type inference is even smarter in TS 5+.
+
+PRACTICE TASK
+-------------
+1. Create a new file.
+2. Declare:
+   - A `number` using explicit annotation.
+   - A `number` using inference.
+   - A `boolean` with inference.
+3. Try assigning a string to the number → see the TS error.
+4. Add a `bigint` example (`let huge: bigint = 9007199254740991n;`).
+5. Compile & run.
+
+KEY TAKEAWAY
+------------
+Use explicit types only when needed or to clarify intent.  
+When the value is obvious, trust TypeScript’s **inference** — cleaner code, same safety.

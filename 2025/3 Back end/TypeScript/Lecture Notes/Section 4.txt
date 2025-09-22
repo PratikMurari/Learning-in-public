@@ -1,5 +1,7 @@
 SECTION 4: YOUR FIRST INTRO TO TYPESCRIPT DOC
 =============================================
+0) Sources
+https://www.typescriptlang.org/docs/handbook/intro.html
 
 1) Pace & Learning Style
 ------------------------
