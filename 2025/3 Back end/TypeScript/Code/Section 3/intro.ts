@@ -4,4 +4,6 @@ console.log("Pratik");
 console.log(user.name);
 console.log(user.age);
 
-//to run typescript file use command tsc filename.ts
+//to run typescript file use command "tsc filename.ts"
+
+//in ts it will tell u mistakes but still convert to js file
