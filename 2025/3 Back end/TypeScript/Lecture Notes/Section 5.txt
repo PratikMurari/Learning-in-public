@@ -120,3 +120,87 @@ KEY TAKEAWAY
 ------------
 Use explicit types only when needed or to clarify intent.  
 When the value is obvious, trust TypeScript’s **inference** — cleaner code, same safety.
+
+
+
+
+
+
+**** Some Updates ****
+
+# Section 5: Number, Boolean, and Type Inference
+
+## 📝 Notes (in simple language)
+
+- TypeScript has primitive types: **string, number, boolean**.  
+- Unlike some languages, **JavaScript/TypeScript don’t have `int` vs `float`**. Everything numeric is just `number`.  
+- **Number examples**: integers, decimals, negatives → all fall under `number`.  
+- **Boolean examples**: `true` or `false`.  
+- **Type inference**:  
+  - If you declare and assign a value at the same time, TypeScript **automatically figures out the type**.  
+  - Example: `let x = 10;` → TypeScript infers `x` is a `number`.  
+  - Writing `let x: number = 10;` is redundant.  
+- **When to avoid inference?**  
+  - If you declare a variable without a value, inference doesn’t work. In such cases, **explicitly annotate the type**.
+
+---
+
+### Example: Numbers
+
+*** Example.ts ***
+let userId: number = 334466; // explicit annotation
+let balance = 99.5;          // inferred as number
+console.log(balance.toFixed(2)); // ✅ works
+*** /Example.ts ***
+
+---
+
+### Example: Booleans
+
+*** Example.ts ***
+let isLoggedIn: boolean = false; // explicit
+let hasAccess = true;            // inferred as boolean
+*** /Example.ts ***
+
+---
+
+### Example: Type Inference
+
+*** Example.ts ***
+let score = 100;  // TypeScript infers number
+// score = "oops"; // ❌ Error: string not assignable to number
+*** /Example.ts ***
+
+---
+
+## 📌 Key Takeaways
+
+1. Use **type inference** for cleaner code when assignment is immediate.  
+2. Use **explicit types** when:  
+   - You declare a variable without assigning a value.  
+   - You want stricter readability for teammates.  
+
+---
+
+## 🏋️ Practice Task
+
+Create variables for:
+1. A product price (`number`)  
+2. A user’s subscription status (`boolean`)  
+3. A variable `points` where you first declare its type, then assign the value `150`.  
+
+---
+
+## 🔄 Latest TypeScript Updates (2023–2024)
+
+- TypeScript now has **`bigint`** as a built-in type for very large integers.  
+  *** Example.ts ***
+  let huge: bigint = 12345678901234567890n;
+  *** /Example.ts ***
+- **`const` type inference improvements**:  
+  - If you use `const`, TypeScript narrows types automatically.  
+  *** Example.ts ***
+  const isOnline = true;  // type is true (literal), not just boolean
+  *** /Example.ts ***
+- TypeScript 5.x improved **control flow analysis**:  
+  - TypeScript is smarter in detecting impossible conditions with booleans and numbers.  
