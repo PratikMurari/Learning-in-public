@@ -1,6 +1,7 @@
 //Function 1
 function addTwo(num:number){
     return num+2;
+    //return "hello";    //It's an issue as we want to return a number, but here we are returning a string and it is not showing error, how to fix it we will study that in next section
 }
 
 console.log(addTwo(7));
