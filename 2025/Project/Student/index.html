@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Sprouts Nursery - Parent Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            box-shadow: 0 8px 16px rgba(76, 175, 80, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 15px;
+            font-size: 14px;
+            padding: 10px;
+            background: rgba(231, 76, 60, 0.1);
+            border-radius: 8px;
+            display: none;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .student-info {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .info-value {
+            color: #333;
+        }
+
+        .status-enrolled {
+            color: #4CAF50;
+            font-weight: 600;
+        }
+
+        .status-not-enrolled {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .modal-content {
+                margin: 20% auto;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🌱</div>
+        <h1>Little Sprouts Nursery</h1>
+        <p class="subtitle">Parent Portal Access</p>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="firstName">Child's First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" name="studentId" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Access Student Information</button>
+            
+            <div class="error-message" id="errorMessage">
+                Invalid credentials. Please check your child's first name and Student ID.
+            </div>
+        </form>
+        
+        <div class="footer">
+            <p>© 2025 Little Sprouts Nursery. All rights reserved.</p>
+            <p>For assistance, contact us at info@littlesproutsnursery.com</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 class="modal-title">Student Information</h2>
+                <p>Welcome! Here are your child's details:</p>
+            </div>
+            <div class="student-info" id="studentInfo">
+                <!-- Student information will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample student data (in a real application, this would be secured on the server)
+        const studentDatabase = {
+            'emma-001': {
+                firstName: 'Emma',
+                fullName: 'Emma Johnson',
+                dateOfBirth: 'March 15, 2021',
+                enrolled: true,
+                studentId: '001',
+                parentEmail: 'parent1@example.com',
+                emergencyContact: '(555) 123-4567'
+            },
+            'noah-002': {
+                firstName: 'Noah',
+                fullName: 'Noah Smith',
+                dateOfBirth: 'July 22, 2020',
+                enrolled: true,
+                studentId: '002',
+                parentEmail: 'parent2@example.com',
+                emergencyContact: '(555) 234-5678'
+            },
+            'olivia-003': {
+                firstName: 'Olivia',
+                fullName: 'Olivia Brown',
+                dateOfBirth: 'December 8, 2021',
+                enrolled: false,
+                studentId: '003',
+                parentEmail: 'parent3@example.com',
+                emergencyContact: '(555) 345-6789'
+            },
+            'liam-004': {
+                firstName: 'Liam',
+                fullName: 'Liam Davis',
+                dateOfBirth: 'September 3, 2020',
+                enrolled: true,
+                studentId: '004',
+                parentEmail: 'parent4@example.com',
+                emergencyContact: '(555) 456-7890'
+            },
+            'ava-005': {
+                firstName: 'Ava',
+                fullName: 'Ava Wilson',
+                dateOfBirth: 'May 18, 2021',
+                enrolled: true,
+                studentId: '005',
+                parentEmail: 'parent5@example.com',
+                emergencyContact: '(555) 567-8901'
+            }
+        };
+
+        // Get modal elements
+        const modal = document.getElementById('studentModal');
+        const span = document.getElementsByClassName('close')[0];
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Handle form submission
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value.trim().toLowerCase();
+            const studentId = document.getElementById('studentId').value.trim();
+            
+            // Create lookup key
+            const lookupKey = `${firstName}-${studentId.padStart(3, '0')}`;
+            
+            // Check if student exists
+            const student = studentDatabase[lookupKey];
+            
+            if (student) {
+                // Hide error message
+                errorMessage.style.display = 'none';
+                
+                // Populate modal with student information
+                const studentInfo = document.getElementById('studentInfo');
+                const enrollmentStatus = student.enrolled ? 
+                    '<span class="status-enrolled">Currently Enrolled</span>' : 
+                    '<span class="status-not-enrolled">Not Currently Enrolled</span>';
+                
+                studentInfo.innerHTML = `
+                    <div class="info-item">
+                        <span class="info-label">Full Name:</span>
+                        <span class="info-value">${student.fullName}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Date of Birth:</span>
+                        <span class="info-value">${student.dateOfBirth}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Student ID:</span>
+                        <span class="info-value">${student.studentId}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Enrollment Status:</span>
+                        <span class="info-value">${enrollmentStatus}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Parent Email:</span>
+                        <span class="info-value">${student.parentEmail}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Emergency Contact:</span>
+                        <span class="info-value">${student.emergencyContact}</span>
+                    </div>
+                `;
+                
+                // Show modal
+                modal.style.display = 'block';
+                
+                // Clear form
+                document.getElementById('firstName').value = '';
+                document.getElementById('studentId').value = '';
+            } else {
+                // Show error message
+                errorMessage.style.display = 'block';
+            }
+        });
+
+        // Close modal when clicking the X
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
