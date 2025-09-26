@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little Sprouts Nursery - Parent Portal</title>
+    <title>Learner's Academy - Student Portal</title>
     <style>
         * {
             margin: 0;
@@ -34,17 +34,22 @@
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #4CAF50, #45a049);
-            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 15px;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
-            color: white;
-            box-shadow: 0 8px 16px rgba(76, 175, 80, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            padding: 10px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         h1 {
@@ -238,9 +243,11 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo">🌱</div>
-        <h1>Little Sprouts Nursery</h1>
-        <p class="subtitle">Parent Portal Access</p>
+        <div class="logo">
+            <img src="./nur.png" alt="Learner's Academy Logo">
+        </div>
+        <h1>Learner's Academy</h1>
+        <p class="subtitle">Student Portal Access</p>
         
         <form id="loginForm">
             <div class="form-group">
