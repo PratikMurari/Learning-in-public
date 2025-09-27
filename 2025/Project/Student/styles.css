@@ -40,8 +40,8 @@ body {
 }
 
 .logo img {
-  width: 100%;
-  height: 100%;
+  width: 135%;
+  height: 135%;
   object-fit: contain;
 }
 
@@ -203,7 +203,7 @@ input[type="text"]:focus {
 }
 
 .status-enrolled {
-  color: #7c5af7;
+  color: #4CAF50;
   font-weight: 600;
 }
 
