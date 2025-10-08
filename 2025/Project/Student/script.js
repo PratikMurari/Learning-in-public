@@ -213,3 +213,12 @@ document.addEventListener("keydown", function (event) {
     clearTimeout(warningTimer);
   }
 });
+
+// Auto-update copyright year
+document.addEventListener("DOMContentLoaded", () => {
+  const year = new Date().getFullYear();
+  const copyright = document.getElementById("copyright");
+  if (copyright) {
+    copyright.innerHTML = `&copy; ${year} Learner's Academy. All rights reserved.`;
+  }
+});
