@@ -18,14 +18,17 @@
 type User = {
   name: string;
   email: string;
-  active: boolean;
+  isActive: boolean;
 };
 
+// type MyString = string;
+// can be done but not recommended
+
 function createUser(user: User): User {
-  return { name: "", email: "", active: true };
+  return { name: "tom", email: "tom@tom", isActive: true };
 }
 
-createUser({ name: "", email: "", active: true });
+createUser({ name: "", email: "", isActive: true });
 
 export {};
 
