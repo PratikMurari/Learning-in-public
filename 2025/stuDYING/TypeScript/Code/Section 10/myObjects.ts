@@ -19,12 +19,15 @@ type User = {
   name: string;
   email: string;
   active: boolean;
-}
+};
 
 function createUser(user: User): User {
-    return {name: "", email: "", active: true}
+  return { name: "", email: "", active: true };
 }
 
-createUser({name:"", email:"", active: true})
+createUser({ name: "", email: "", active: true });
 
 export {};
+
+//Source:
+//https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases
