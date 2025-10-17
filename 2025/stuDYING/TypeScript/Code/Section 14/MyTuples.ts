@@ -13,5 +13,12 @@ const newUser: User = [112, "example@google.com",];
 newUser[1] = "hc.com";
 newUser.push(22);   // Allowed, but not recommended
 
+//Additional Concepts of tuples
+// Tuple with optional elements
+let userInfo: [string, number, boolean?];
+userInfo = ["hc", 131];
 
+// Tuple with rest elements
+let userRole: [number, ...string[]];
+userRole = [1, "admin", "editor", "subscriber"];
 
