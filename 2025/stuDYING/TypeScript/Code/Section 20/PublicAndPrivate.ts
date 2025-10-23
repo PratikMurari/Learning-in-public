@@ -1,4 +1,4 @@
-class User2 {
+class User2Renamed {
   // By default, all properties and methods are public
   public name: string;
   email: string;
@@ -14,10 +14,10 @@ class User2 {
   }
 }
 
-const Pm = new User2("Pratik", "p@m.com");
+const pratikUser = new User2Renamed("Pratik", "p@m.com");
 
 // Pratik.city = "Mumbai";
 
-console.log(Pm);
+console.log(pratikUser);
 
 // something I noticed was after marking city as private, it lost it's readonly property
