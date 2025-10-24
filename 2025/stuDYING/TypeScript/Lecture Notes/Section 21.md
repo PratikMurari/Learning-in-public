@@ -305,7 +305,3 @@ console.log(p.price); // ✅ 120
 Getters and setters in TypeScript make your classes **cleaner, safer, and more controlled**, while giving you full flexibility to manage how data is exposed or changed.
 
 **Next Up →** Inheritance and `protected` keyword.
-
-```
-
-```
