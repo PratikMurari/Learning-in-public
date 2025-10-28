@@ -17,5 +17,16 @@ function identityFour(val) {
     return val;
 }
 console.log(identityFour("Hello World"));
-var Test = identityFour({ brand: "Coca Cola", type: 1 });
-console.log(Test);
+var TestOne = identityFour({ brand: "Coca Cola", type: 1 });
+console.log(TestOne);
+//Additional Generic Examples
+// Multiple Generics
+function identityFive(valOne, valTwo) {
+    return [valOne, valTwo];
+}
+console.log(identityFive("Hello", "World"));
+console.log(identityFive(25, true));
+// Generic Constraints
+function identitySix(valOne, valTwo) {
+    return [valOne, valTwo];
+}
