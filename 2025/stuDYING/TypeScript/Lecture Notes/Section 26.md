@@ -1,6 +1,5 @@
 # 🧠 Section 26: Generics in Arrays and Arrow Functions
 
-
 ## 🎯 Overview
 
 In this section, we extend our discussion on **Generics** in TypeScript — focusing on:
@@ -12,6 +11,8 @@ In this section, we extend our discussion on **Generics** in TypeScript — focu
 Generics make your code flexible yet type-safe.  
 When working with arrays and arrow functions, understanding their syntax becomes essential.
 
+https://www.typescriptlang.org/docs/handbook/2/generics.html#handbook-content
+
 ---
 
 ## ⚙️ 1. Defining Generics with Arrays
@@ -20,6 +21,7 @@ Sometimes you’ll want to pass **arrays** to a function that uses generics.
 Let’s say we’re working on a product search — we might want to take in a list of products or IDs.
 
 **_ Example.ts _**
+
 ```typescript
 function getSearchProducts<T>(products: T[]): T {
   // perform some logic — e.g. fetch or filter results
@@ -27,6 +29,7 @@ function getSearchProducts<T>(products: T[]): T {
   return products[myIndex];
 }
 ```
+
 **_ /Example.ts _**
 
 ### 🔍 Explanation:
