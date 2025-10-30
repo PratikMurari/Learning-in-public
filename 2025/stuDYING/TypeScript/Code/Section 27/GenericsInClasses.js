@@ -30,5 +30,19 @@ var getMoreSearchProducts = function (products) {
     var myIndex = 4;
     return products[myIndex];
 };
-//<T,> to avoid syntax error in TSX files
-//Also so that people don't get confused with JSX
+function anotherFunction(valOne, valTwo) {
+    return {
+        valOne: valOne,
+        valTwo: valTwo,
+    };
+}
+var Sellable = /** @class */ (function () {
+    function Sellable() {
+        this.cart = [];
+    }
+    Sellable.prototype.addToCart = function (product) {
+        this.cart.push(product);
+    };
+    return Sellable;
+}());
+console.log("Generics in Classes");
