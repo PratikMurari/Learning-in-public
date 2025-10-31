@@ -17,3 +17,23 @@ function provideId(id) {
 //Test cases
 provideId(null);
 provideId("12345");
+//Documentation
+// Addition Stuff
+//Type Guards and Differentiating Types
+function printAll(strs) {
+    // !!!!!!!!!!!!!!!!
+    //  DON'T DO THIS!
+    //   KEEP READING
+    // !!!!!!!!!!!!!!!!
+    if (strs) {
+        if (typeof strs === "object") {
+            for (var _i = 0, strs_1 = strs; _i < strs_1.length; _i++) {
+                var s = strs_1[_i];
+                console.log(s);
+            }
+        }
+        else if (typeof strs === "string") {
+            console.log(strs);
+        }
+    }
+}

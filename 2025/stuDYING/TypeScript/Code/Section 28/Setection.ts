@@ -9,11 +9,10 @@ function detectType(val: number | string) {
 console.log(detectType("Hello world!"));
 console.log(detectType(5));
 
-
 //common case
 function provideId(id: string | null) {
   if (!id) {
-        return console.log("Please provide ID");
+    return console.log("Please provide ID");
   }
   return console.log("Your ID is " + id);
 }
@@ -22,3 +21,22 @@ function provideId(id: string | null) {
 provideId(null);
 provideId("12345");
 
+//Documentation
+// Addition Stuff
+//Type Guards and Differentiating Types
+
+function printAll(strs: string | string[] | null) {
+  // !!!!!!!!!!!!!!!!
+  //  DON'T DO THIS!
+  //   KEEP READING
+  // !!!!!!!!!!!!!!!!
+  if (strs) {
+    if (typeof strs === "object") {
+      for (const s of strs) {
+        console.log(s);
+      }
+    } else if (typeof strs === "string") {
+      console.log(strs);
+    }
+  }
+}
