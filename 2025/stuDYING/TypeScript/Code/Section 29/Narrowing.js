@@ -1,4 +1,4 @@
-//Narrowing 
+//Narrowing
 function detectType(val) {
     if (typeof val === "string") {
         return val.toUpperCase();
@@ -36,5 +36,10 @@ function printAll(strs) {
         else if (typeof strs === "string") {
             console.log(strs);
         }
+    }
+}
+function isAdminAccount(account) {
+    if ("isAdmin" in account) {
+        return account.isAdmin;
     }
 }

@@ -1,4 +1,4 @@
-//Narrowing 
+//Narrowing
 function detectType(val: number | string) {
   if (typeof val === "string") {
     return val.toUpperCase();
@@ -39,5 +39,25 @@ function printAll(strs: string | string[] | null) {
     } else if (typeof strs === "string") {
       console.log(strs);
     }
+  }
+}
+
+//Section 29 The in Operator Narrowing
+//Documentation :
+//https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-in-operator-narrowing
+interface User {
+  name: string;
+  email: string;
+}
+
+interface Admin {
+  name: string;
+  email: string;
+  isAdmin: boolean;
+}
+
+function isAdminAccount(account: User | Admin) {
+  if ("isAdmin" in account) {
+    return account.isAdmin;
   }
 }
