@@ -8,6 +8,8 @@ It combines two powerful ideas:
 1. **Discriminated Unions** – a clean, type-safe way to model multiple related shapes or objects.
 2. **Exhaustiveness Checking with `never`** – a safeguard that ensures you’ve handled _every possible case_ so your code won’t silently break when new types are added.
 
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html?#discriminated-unions
+
 ---
 
 ## 🧩 1. Discriminated Unions
