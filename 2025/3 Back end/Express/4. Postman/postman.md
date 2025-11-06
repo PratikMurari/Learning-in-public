@@ -66,8 +66,8 @@ We use different methods to perform different operations on a resource:
 Example body for a POST request:
 
 ```
-Key: name    | Value: Angela
-Key: email   | Value: angela@example.com
+Key: name    | Value: pratik
+Key: email   | Value: pratik@example.com
 ```
 
 If the backend isn’t running (`localhost:3000`), you’ll see:
@@ -122,9 +122,9 @@ Sends only an HTTP status code response (no HTML/text body).
 | ------ | ---------------------------- | --------------- |
 | GET    | `localhost:3000/`            | 200             |
 | POST   | `localhost:3000/register`    | 201             |
-| PUT    | `localhost:3000/user/angela` | 200             |
-| PATCH  | `localhost:3000/user/angela` | 200             |
-| DELETE | `localhost:3000/user/angela` | 200             |
+| PUT    | `localhost:3000/user/pratik` | 200             |
+| PATCH  | `localhost:3000/user/pratik` | 200             |
+| DELETE | `localhost:3000/user/pratik` | 200             |
 
 Each should return a corresponding success message or code.
 
