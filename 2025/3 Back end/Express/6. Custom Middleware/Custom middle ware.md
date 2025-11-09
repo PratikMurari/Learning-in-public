@@ -11,6 +11,8 @@ In this lesson, we learn how to:
 
 ---
 
+## Documentation: https://www.npmjs.com/package/morgan
+
 ## Key Concepts
 
 - **Middleware:** A function that sits _between_ the request coming in and the route handlers (`app.get()`, `app.post()`, etc.).
