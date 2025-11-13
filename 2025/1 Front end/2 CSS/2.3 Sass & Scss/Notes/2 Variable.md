@@ -1,0 +1,115 @@
+# **2. variables.md**
+
+# Sass Variables
+
+Sass variables let you store reusable values (like colors, spacing, font sizes) and use them throughout your stylesheet.  
+They behave similarly to variables in JavaScript, but in SCSS you define them using the `$` symbol.
+
+---
+
+## ⭐ Why Variables Matter
+
+Without Sass, you'd repeat the same values over and over:
+
+```css
+button {
+  background: #6c5ce7;
+}
+
+.contact button {
+  background: #6c5ce7;
+}
+````
+
+If you want to change the color later… you’d have to update **every instance**.
+
+Variables solve this by making values **centralized** and **easy to update**.
+
+---
+
+## 🧩 Basic Syntax
+
+```scss
+$variable-name: value;
+```
+
+Example:
+
+```scss
+$primary-color: #6c5ce7;
+$text-color: #444;
+```
+
+You can then use them anywhere:
+
+```scss
+button {
+  background: $primary-color;
+  color: $text-color;
+}
+```
+
+---
+
+## ✨ Live Example from the Video
+
+```scss
+$primary-button: #a78bfa; // purple-ish button color
+$text-color: #555;
+
+header button {
+  background: $primary-button;
+  color: $text-color;
+}
+
+.contact button {
+  background: $primary-button;
+}
+```
+
+Now changing the button color happens in one place:
+
+```scss
+$primary-button: #ff7675; // soft red
+```
+
+Everything updates automatically.
+
+---
+
+## 💡 Tip: Use Variables for More Than Colors
+
+A few common use cases:
+
+```scss
+$font-stack: 'Inter', sans-serif;
+$spacing-unit: 1rem;
+$border-radius: 6px;
+$hero-height: 100vh;
+```
+
+---
+
+## 🗂 Good Naming Practices
+
+| Bad Name | Better Name      |
+| -------- | ---------------- |
+| `$blue`  | `$primary-color` |
+| `$big`   | `$spacing-lg`    |
+| `$font`  | `$font-main`     |
+
+Clear names = maintainable stylesheets.
+
+---
+
+## ✔️ Summary
+
+Variables help you:
+
+* Avoid repeating values
+* Quickly update global styles
+* Keep your code cleaner and more organized
+* Structure your design system in SCSS
+
+They’re often the *first* and *most important* superpower you'll rely on in Sass.
+
