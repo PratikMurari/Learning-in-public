@@ -2,4 +2,13 @@ header {
   background-color: lightblue;
   display: flex;
   justify-content: center;
+  color: rgb(43, 43, 43);
+}
+
+header button {
+  background: rgb(182, 85, 153);
+}
+
+.contact button {
+  background-color: rgb(182, 85, 153);
 }/*# sourceMappingURL=style.css.map */
