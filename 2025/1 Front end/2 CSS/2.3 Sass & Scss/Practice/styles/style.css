@@ -1,14 +1,19 @@
 header {
-  background-color: lightblue;
+  background: lightblue;
   display: flex;
   justify-content: center;
   color: rgb(43, 43, 43);
 }
-
 header button {
   background: rgb(182, 85, 153);
 }
+header button:hover {
+  background: red;
+}
+header button::after {
+  content: " Hellooo!!";
+}
 
 .contact button {
-  background-color: rgb(182, 85, 153);
+  background: rgb(182, 85, 153);
 }/*# sourceMappingURL=style.css.map */
