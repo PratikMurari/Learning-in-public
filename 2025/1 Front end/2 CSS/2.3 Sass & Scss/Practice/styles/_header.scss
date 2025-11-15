@@ -1,15 +1,8 @@
-@mixin flexCenter($direction, $background) {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $direction;
-  background: $background;
-}
-
 header {
-  @include flexCenter(colum, red);
+  height: 100vh;
   color: $textColor;
+  background-color: lightblue;
+
   button {
     background: $primaryBtn;
     &:hover {

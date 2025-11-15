@@ -2,5 +2,6 @@
 @import "./_header"; //you don't need to add .scss extension
 
 .contact {
-  @include flexCenter(row, blue);
+  @extend header;
+  background-color: lightcoral;
 }

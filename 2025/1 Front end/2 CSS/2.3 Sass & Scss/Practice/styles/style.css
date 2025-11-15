@@ -1,27 +1,18 @@
-header {
+header, .contact {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: colum;
-  background: red;
   color: rgb(43, 43, 43);
+  background-color: lightblue;
 }
-header button {
+header button, .contact button {
   background: rgb(182, 85, 153);
 }
-header button:hover {
+header button:hover, .contact button:hover {
   background: red;
 }
-header button::after {
+header button::after, .contact button::after {
   content: " Hellooo!!";
 }
 
 .contact {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  background: blue;
+  background-color: lightcoral;
 }/*# sourceMappingURL=style.css.map */
