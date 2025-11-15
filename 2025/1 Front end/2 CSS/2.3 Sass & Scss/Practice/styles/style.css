@@ -1,7 +1,10 @@
 header {
-  background: lightblue;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: colum;
+  background: red;
   color: rgb(43, 43, 43);
 }
 header button {
@@ -14,6 +17,11 @@ header button::after {
   content: " Hellooo!!";
 }
 
-.contact button {
-  background: rgb(182, 85, 153);
+.contact {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: blue;
 }/*# sourceMappingURL=style.css.map */
