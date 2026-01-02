@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJS Tags</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EJS Tags</title>
-</head>
+  <body>
+    <h1>
+      <!-- Tite goes here -->
+      <%= title %>              <!-- This ejs tag is used to output escaped content.-->
+    </h1>
+    <p>
+      Current second:
+      <!-- Current second goes here -->
+      <%= seconds %>
+    </p>
+    <% if (seconds % 2===0) { %>           <!-- This ejs tag is used for control flow statements like if, for, etc. -->
+    <ul>
+      <!-- List goes here if current second is even. -->
+      <% items.forEach(function(item){ %>
+      <li>
+        <!-- Item goes here -->
+        <%= item %>
+      </li>
+      <% }); %>
+      <!-- Otherwise it should display the following: -->
+      <!-- <p>No items to display</p> -->
+    </ul>
+    <% } else { %>
+    <p>No items to display</p>
+    <% }%>
+    <p>
+      <!-- HTML content goes here -->
+      <%- htmlContent %>
+    </p>
 
-<body>
-  <h1>
-    <!-- Tite goes here -->
-  </h1>
-  <p>Current second:
-    <!-- Current second goes here -->
-  </p>
-  if (seconds % 2===0) {
-  <ul>
-    <!-- List goes here if current second is even. -->
-    <!-- Otherwise it should display the following: -->
-    <!-- <p>No items to display</p> -->
-  </ul>
-  } else {
-  <p>No items to display</p>
-  }
-  <p>
-    <!-- HTML content goes here -->
-  </p>
-
-  <!-- Footer goes here -->
-</body>
-
+    <!-- Footer goes here -->
+    <%- include("footer.ejs") %>          <!-- This ejs tag, is used to output unescaped content, useful for including HTML or other EJS files. -->
+  </body>
 </html>
