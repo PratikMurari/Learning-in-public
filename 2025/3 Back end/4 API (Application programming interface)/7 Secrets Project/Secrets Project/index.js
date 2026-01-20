@@ -8,6 +8,7 @@ const app = express();
 const PORT = 3000;
 
 // 3. Use the public folder for static files.
+app.use(express.static('public'));
 
 // 4. When the user goes to the home page it should render the index.ejs file.
 
