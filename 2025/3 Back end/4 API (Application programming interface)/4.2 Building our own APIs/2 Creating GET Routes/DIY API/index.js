@@ -98,6 +98,8 @@ app.delete("/all", (req, res) => {
   }
 });
 
+// Start the server
+
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
 });
