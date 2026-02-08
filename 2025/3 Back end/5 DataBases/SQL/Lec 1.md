@@ -1,5 +1,13 @@
 # Lecture 1: SQL Commands – CREATE TABLE and INSERT Data
 
+## Source
+
+**Documentation:**
+https://www.w3schools.com/sql/
+
+**Play Ground:**
+https://sqliteonline.com/#fiddle-5bbdbaef7288bo2ajn2wly03
+
 ## Overview
 
 In this lecture, we get hands-on experience with **SQL (Structured Query Language)** by:
