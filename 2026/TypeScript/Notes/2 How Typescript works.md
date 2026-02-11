@@ -1,0 +1,374 @@
+# How TypeScript Works (Behind the Scenes)
+
+## 1. Purpose of this Lecture
+
+This lecture explains **what happens behind the scenes** when you write TypeScript code.
+
+> If you understand this flow, TypeScript stops feeling “magical”  
+> and starts feeling **logical and predictable**.
+
+This entire video revolves around **one diagram** — understanding that diagram = understanding TypeScript.
+
+---
+
+## 2. Important Truth (Reinforced)
+
+### TypeScript itself does NOTHING at runtime
+
+- Browsers do **not** understand TypeScript
+- Node.js does **not** execute TypeScript logic
+- TypeScript must be **converted to JavaScript**
+
+So the journey is always:
+
+```
+
+TypeScript → JavaScript → Execution
+
+```
+
+---
+
+## 3. TypeScript is an Active Open-Source Project
+
+- TypeScript is maintained by Microsoft
+- Extremely active repository
+- Thousands of commits
+- Hundreds of open pull requests
+
+💡 This matters because:
+
+- Bugs are fixed quickly
+- Language keeps improving
+- Tooling stays modern
+
+You **do not need to contribute** — just learn from it.
+
+---
+
+## 4. High-Level Compilation Flow
+
+Here is the **complete journey** of a `.ts` file:
+
+```
+
+TypeScript Code
+↓
+Lexer
+↓
+Parser
+↓
+Binder
+↓
+Type Checker
+↓
+Emitter
+↓
+JavaScript Output
+
+```
+
+Now let’s understand **each step clearly**.
+
+---
+
+## 5. Step 1: Lexer (Tokenization)
+
+### What is a Lexer?
+
+A **lexer** breaks your code into **tokens**.
+
+### Tokens are things like:
+
+- `const`
+- `function`
+- `return`
+- variable names
+- operators (`=`, `+`, `:`)
+
+Example:
+
+```ts
+function greet(name: string) {
+  return "Hello";
+}
+```
+
+This becomes a stream of tokens:
+
+- `function`
+- `greet`
+- `(`
+- `name`
+- `:`
+- `string`
+- `)`
+
+### What errors are caught here?
+
+- Missing quotes
+- Missing brackets
+- Invalid symbols
+- Basic syntax mistakes
+
+⚠️ Lexer is **not strict** — it only checks obvious issues.
+
+---
+
+## 6. Step 2: Parser (AST Creation)
+
+### What is a Parser?
+
+The parser converts tokens into a **tree structure** called:
+
+### AST — Abstract Syntax Tree
+
+> AST is a structured representation of your code.
+
+Instead of raw text, the code becomes a **tree of meaning**.
+
+### Why AST matters
+
+- Makes code analyzable
+- Enables refactoring
+- Allows type checking
+- Used by linters, formatters, bundlers
+
+### Tools you can use
+
+- AST Explorer
+- Compiler visualization tools
+
+AST shows:
+
+- How functions are nested
+- Variable scopes
+- Control flow structure
+
+---
+
+## 7. Step 3: Binder (TypeScript Special Step)
+
+⚠️ **This step does NOT exist in normal JavaScript**
+
+### What does the Binder do?
+
+The binder:
+
+- Walks the AST
+- Builds **symbol tables**
+- Connects variables to their definitions
+- Tracks scopes and ownership
+
+### Key things created here
+
+#### 1️⃣ Symbol Tables
+
+- Every variable
+- Every function
+- Every interface
+- Every type
+
+All get registered as **symbols**.
+
+#### 2️⃣ Parent Pointers
+
+- AST is a tree
+- Binder allows moving:
+  - Down the tree
+  - Back up to parent nodes
+
+#### 3️⃣ Flow Nodes
+
+Used for logic like:
+
+```ts
+if (typeof x === "string") {
+  // flow check
+}
+```
+
+This helps TypeScript understand:
+
+- Conditional logic
+- Type narrowing
+- Control flow
+
+💡 Without Binder → **Type checking is impossible**
+
+---
+
+## 8. Step 4: Type Checker (Most Important)
+
+This is the **heart of TypeScript**.
+
+### Why Type Checker exists
+
+JavaScript does **not** check:
+
+- Type consistency
+- Function contracts
+- Assignment correctness
+
+TypeScript adds this missing checker.
+
+---
+
+### What does the Type Checker do?
+
+It:
+
+- Traverses code multiple times
+- Compares expected vs actual types
+- Ensures type safety
+- Detects mismatches early
+
+### Example checks
+
+- Assigning number to string
+- Passing wrong arguments
+- Returning wrong values
+- Breaking interface contracts
+
+### Why it’s slow sometimes
+
+- Checker runs **multiple passes**
+- Structural analysis is expensive
+- But safety is worth it
+
+💡 This is also why:
+
+- VS Code shows red squiggly lines
+- Editors give instant feedback
+
+They **extract the checker** from TypeScript internally.
+
+---
+
+## 9. Step 5: Emitter (Code Generator)
+
+### What does the Emitter do?
+
+The emitter:
+
+- Generates JavaScript
+- Removes TypeScript-only syntax
+- Applies target configuration
+
+### What gets removed?
+
+- Type annotations
+- Interfaces
+- Type aliases
+- `: string`, `: number`, etc.
+
+Example:
+
+```ts
+function greet(name: string): string {
+  return `Hello ${name}`;
+}
+```
+
+Becomes:
+
+```js
+"use strict";
+function greet(name) {
+  return `Hello ${name}`;
+}
+```
+
+⚠️ Notice:
+
+- Types are **completely removed**
+- Logic stays the same
+
+---
+
+## 10. Why Node / Bun can run TypeScript
+
+When people say:
+
+> “Node can run TypeScript”
+
+What actually happens is:
+
+- Node strips type annotations
+- Uses **only the emitter**
+- Skips type checking
+
+So:
+
+- No errors at runtime
+- But also no safety guarantees
+
+---
+
+## 11. Files Generated by TypeScript
+
+After emission, you may get:
+
+- `.js` → actual runtime file
+- `.d.ts` → type declaration files
+- `.map` → source maps (debugging)
+
+Most developers:
+
+- Use `.js`
+- Ignore `.d.ts` unless building libraries
+
+---
+
+## 12. Why Understanding This Matters
+
+If you know this flow:
+
+- Errors make sense
+- Configurations are easier
+- Debugging becomes logical
+- TypeScript feels predictable
+
+You stop thinking:
+
+> “Why is TS angry?”
+
+And start thinking:
+
+> “Which stage caught this error?”
+
+---
+
+## 13. Final Summary
+
+### The entire TypeScript journey
+
+```
+Write Code
+↓
+Tokenize (Lexer)
+↓
+Build Tree (Parser)
+↓
+Bind Symbols (Binder)
+↓
+Check Types (Checker)
+↓
+Generate JS (Emitter)
+```
+
+### Key takeaway
+
+> TypeScript is NOT magic
+> It is just a **very smart compiler pipeline**
+
+---
+
+## 14. What’s Next?
+
+Next lecture covers:
+
+- Installing TypeScript properly
+- `tsconfig.json`
+- Production-level setup
+- Real-world workflows
