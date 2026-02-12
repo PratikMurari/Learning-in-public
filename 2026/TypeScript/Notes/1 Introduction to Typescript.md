@@ -1,4 +1,4 @@
-# Introduction to TypeScript
+# Lecture 1: Introduction to TypeScript
 
 
 ## 1. What is this TypeScript series about?

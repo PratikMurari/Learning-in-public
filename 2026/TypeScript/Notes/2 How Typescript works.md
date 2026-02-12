@@ -1,4 +1,4 @@
-# How TypeScript Works (Behind the Scenes)
+# Lecture 2: How TypeScript Works (Behind the Scenes)
 
 ## 1. Purpose of this Lecture
 
