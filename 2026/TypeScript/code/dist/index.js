@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function greet(name) {
-  return `Hello, ${name}!`;
+    return `Hello, ${name}. Welcome to TypeScript, Chai-code!`;
 }
-console.log(greet("World"));
+let username = "Pratik";
+console.log(greet(username));
 //# sourceMappingURL=index.js.map

@@ -1,5 +1,6 @@
 function greet(name: string): string {
-  return `Hello, ${name}!`;
+  return `Hello, ${name}. Welcome to TypeScript, Chai-code!`;
 }
 
-console.log(greet("World"));
+let username:string = "Pratik";
+console.log(greet(username));
