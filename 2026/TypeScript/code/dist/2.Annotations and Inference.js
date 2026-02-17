@@ -19,4 +19,14 @@ channelName = 1122; // Error: Type 'number' is not assignable to type 'string'.
 // In this case, we have explicitly annotated the variable 'channelName' with the type 'string'. 
 // This means that 'channelName' can only hold string values. 
 // Assigning a number to 'channelName' results in a type error because it violates the type annotation.
+// Different types of annotations in TypeScript include:
+// 1. Primitive Types: string, number, boolean, null, undefined, symbol, bigint
+// 2. Array Types: number[], string[], etc.
+// 3. Tuple Types: [string, number], etc.
+// 4. Enum Types: enum Color { Red, Green, Blue }
+// 5. Any Type: any (allows any type of value)
+// 6. Void Type: void (used for functions that do not return a value)
+// 7. Never Type: never (used for functions that never return or throw an error)
+// 8. Object Types: { name: string; age: number }, etc.
+// 9. Function Types: (param1: type1, param2: type2) => returnType
 //# sourceMappingURL=2.Annotations%20and%20Inference.js.map
