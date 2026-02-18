@@ -1,5 +1,5 @@
 "use strict";
-// union types allow us to specify that a variable can hold more than one type of value. 
+// union types allow us to specify that a variable can hold more than one type of value.
 // We can use the pipe (|) operator to define a union type.
 Object.defineProperty(exports, "__esModule", { value: true });
 let subs = "1M";
@@ -20,4 +20,5 @@ console.log(currentOrder);
 // try to avoid any as much as possible, because it defeats the purpose of using TypeScript,
 // which is to have type safety and catch errors at compile time.
 // Using any can lead to runtime errors that could have been caught during development.
+// preferably use unknown instead of any, because it forces us to do type checking before using the variable, which helps in maintaining type safety.
 //# sourceMappingURL=3.union&any.js.map
