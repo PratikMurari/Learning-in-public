@@ -15,10 +15,25 @@ function getChai(kind: string | number) {
 // This is because TypeScript has narrowed down the type of kind based on the typeof check.
 
 // Best practices for type narrowing:
-
 function serveChai(msg?: string) {
   if (msg) {
     return `Serving ${msg}`;
   }
   return "Serving default plain chai";
 }
+
+//exapmle with exhausting checks:
+function orderChai(size: "small" | "medium" | "large" | number) {
+  if (size === "small") {
+    return `small cutting chai...`;
+  }
+  if (size === "medium" || size === "large") {
+    return `make extra chai...`;
+  }
+  return `chai order: ${size}`;
+}
+//test cases for orderChai function
+console.log(orderChai("small"));
+console.log(orderChai("medium"));
+console.log(orderChai("large"));
+console.log(orderChai(42));

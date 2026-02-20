@@ -20,4 +20,19 @@ function serveChai(msg) {
     }
     return "Serving default plain chai";
 }
+//exapmle with exhausting checks:
+function orderChai(size) {
+    if (size === "small") {
+        return `small cutting chai...`;
+    }
+    if (size === "medium" || size === "large") {
+        return `make extra chai...`;
+    }
+    return `chai order: ${size}`;
+}
+//test cases for orderChai function
+console.log(orderChai("small"));
+console.log(orderChai("medium"));
+console.log(orderChai("large"));
+console.log(orderChai(42));
 //# sourceMappingURL=4.typeNarrowing.js.map
