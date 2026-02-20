@@ -4,7 +4,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 let subs = "1M";
 let apiRequestStatus = "pending";
-apiRequestStatus = "done"; // Error: Type '"done"' is not assignable to type '"success" | "error" | "pending"'.
+// apiRequestStatus = "done"; // Error: Type '"done"' is not assignable to type '"success" | "error" | "pending"'.
 let airlineSeat = "window";
 const orders = ["12", "20", "28", "42"];
 let currentOrder;

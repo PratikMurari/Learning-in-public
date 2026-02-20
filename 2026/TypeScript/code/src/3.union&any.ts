@@ -5,7 +5,7 @@ let subs: number | string = "1M";
 
 let apiRequestStatus: "success" | "error" | "pending" = "pending";
 
-apiRequestStatus = "done"; // Error: Type '"done"' is not assignable to type '"success" | "error" | "pending"'.
+// apiRequestStatus = "done"; // Error: Type '"done"' is not assignable to type '"success" | "error" | "pending"'.
 
 let airlineSeat: "window" | "aisle" | "middle" = "window";
 
