@@ -62,3 +62,28 @@ function serve(chai: Kulhd | Cutting) {
     return chai.serve();
   }
 }
+
+// typescript superpowers to make your own types
+type ChaiOrder = {
+  type: string;
+  sugar: number;
+}
+
+function isChaiOrder(obj:any):obj is ChaiOrder{
+  return (
+    typeof obj === "object" &&
+    obj !== null &&
+    "type" in obj &&
+    typeof obj.type === "string" &&
+    "sugar" in obj &&
+    typeof obj.sugar === "number"
+  )
+}
+
+function serveOrder(item: ChaiOrder|string) {
+  if (isChaiOrder(item)) {
+    return `Serving ${item.type} chai with ${item.sugar} sugar...`;
+  }
+  return `Serving custom chai: ${item}`;
+}
+

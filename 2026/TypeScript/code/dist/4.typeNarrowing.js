@@ -57,4 +57,18 @@ function serve(chai) {
         return chai.serve();
     }
 }
+function isChaiOrder(obj) {
+    return (typeof obj === "object" &&
+        obj !== null &&
+        "type" in obj &&
+        typeof obj.type === "string" &&
+        "sugar" in obj &&
+        typeof obj.sugar === "number");
+}
+function serveOrder(item) {
+    if (isChaiOrder(item)) {
+        return `Serving ${item.type} chai with ${item.sugar} sugar...`;
+    }
+    return `Serving custom chai: ${item}`;
+}
 //# sourceMappingURL=4.typeNarrowing.js.map
