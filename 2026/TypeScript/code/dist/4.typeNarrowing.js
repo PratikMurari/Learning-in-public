@@ -35,4 +35,26 @@ console.log(orderChai("small"));
 console.log(orderChai("medium"));
 console.log(orderChai("large"));
 console.log(orderChai(42));
+// guardrails for type narrowing: instanceof, typeof, in operator, custom type predicates, exhaustive checks, and control flow analysis.
+// instanceof is used to check if an object is an instance of a specific class or constructor function. It helps in narrowing down the type of an object to a specific class type.
+// typeof is used to check the type of a variable at runtime. It helps in narrowing down the type of a variable to a specific primitive type (e.g., string, number, boolean).
+// in operator is used to check if a property exists in an object. It helps in narrowing down the type of an object based on the presence of a specific property.
+// custom type predicates are user-defined functions that return a boolean value indicating whether a variable is of a specific type. They help in narrowing down the type of a variable based on custom logic.
+// exhaustive checks are used to ensure that all possible cases of a union type are handled. They help in preventing unhandled cases and ensuring that the code is robust.
+// control flow analysis is used by TypeScript to analyze the flow of code and determine the types of variables at different points in the code. It helps in narrowing down the types of variables based on the control flow of the program.
+class Kulhd {
+    serve() {
+        return "Serving kulhd chai...";
+    }
+}
+class Cutting {
+    serve() {
+        return "Serving cutting chai...";
+    }
+}
+function serve(chai) {
+    if (chai instanceof Kulhd) {
+        return chai.serve();
+    }
+}
 //# sourceMappingURL=4.typeNarrowing.js.map
