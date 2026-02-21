@@ -22,4 +22,15 @@ newValue = 2.5;
 if (typeof newValue === "string") {
     newValue.toUpperCase(); // No error, we have narrowed the type to string
 }
+// try catch block with unknown
+try {
+}
+catch (error) {
+    if (error instanceof Error) {
+        console.log(error.message);
+    }
+    else {
+        console.log("Unknown error", error);
+    }
+}
 //# sourceMappingURL=5.moreTypes.js.map
