@@ -45,3 +45,16 @@ try {
     console.log("Unknown error", error);
   }
 }
+
+// Type Casting vs Assertion with unknown
+const data: unknown = "chai aur code";
+const strData: string = data as string; // This is type casting
+
+let someValue: any = "hello world";
+let strLength: number = (someValue as string).length; // Type assertion
+
+// Aspect	| Type Assertion	                        | Type Casting
+// Purpose	| Tell TypeScript to treat value as a type	| Actually convert value to another type
+// Runtime	| No runtime effect	                        | May have runtime behavior
+// Syntax	| value as Type or <Type>value	            | value as Type (when converting)
+// Example	| (someValue as string).length	            | const str: string = data as string

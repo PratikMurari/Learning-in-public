@@ -33,4 +33,14 @@ catch (error) {
         console.log("Unknown error", error);
     }
 }
+// Type Casting vs Assertion with unknown
+const data = "chai aur code";
+const strData = data; // This is type casting
+let someValue = "hello world";
+let strLength = someValue.length; // Type assertion
+// Aspect	| Type Assertion	                        | Type Casting
+// Purpose	| Tell TypeScript to treat value as a type	| Actually convert value to another type
+// Runtime	| No runtime effect	                        | May have runtime behavior
+// Syntax	| value as Type or <Type>value	            | value as Type (when converting)
+// Example	| (someValue as string).length	            | const str: string = data as string
 //# sourceMappingURL=5.moreTypes.js.map
