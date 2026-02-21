@@ -71,4 +71,21 @@ function serveOrder(item) {
     }
     return `Serving custom chai: ${item}`;
 }
+function MakeChai(order) {
+    switch (order.type) {
+        case "masala":
+            return `Masala Chai...`;
+            break;
+        case "ginger":
+            return `Ginger Chai...`;
+            break;
+        case "elaichi":
+            return `Elaichi Chai...`;
+            break;
+    }
+}
+// function brew(order: Masala Chai|GingerChai) {
+//   if ("spiceLevel" in order){
+//   }
+// }
 //# sourceMappingURL=4.typeNarrowing.js.map
