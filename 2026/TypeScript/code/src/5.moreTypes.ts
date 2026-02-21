@@ -13,3 +13,6 @@ let bookString = '{"name": "who moved my cheese"}';
 let bookObject = JSON.parse(bookString) as Book;
 
 console.log(bookObject);
+
+// inputElement case
+const inputElement = document.getElementById("username") as HTMLInputElement;

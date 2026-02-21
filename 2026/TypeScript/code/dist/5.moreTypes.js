@@ -6,4 +6,6 @@ let numericLength = response.length;
 let bookString = '{"name": "who moved my cheese"}';
 let bookObject = JSON.parse(bookString);
 console.log(bookObject);
+// inputElement case
+const inputElement = document.getElementById("username");
 //# sourceMappingURL=5.moreTypes.js.map
