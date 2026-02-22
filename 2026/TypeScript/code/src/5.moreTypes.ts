@@ -79,3 +79,9 @@ function redirectBasedOnRole(role: Role): void {
   // yet it is added coz if someone adds a new role in the future and forgets to update this function, the compiler will catch that error.
   // example how we later added superadmin role but forgot to update the function
 }
+
+// Never type example
+// where it is used: when a function never returns, it can be used to indicate that the function will never complete its execution and will always throw an error or enter an infinite loop.
+function neverReturns(): never {
+  while (true) {}
+}
