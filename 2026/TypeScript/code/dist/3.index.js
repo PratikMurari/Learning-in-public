@@ -5,4 +5,4 @@ function greet(name) {
 }
 let username = "Pratik";
 console.log(greet(username));
-//# sourceMappingURL=1.index.js.map
+//# sourceMappingURL=3.index.js.map

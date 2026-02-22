@@ -88,4 +88,4 @@ function MakeChai(order) {
 //   if ("spiceLevel" in order){
 //   }
 // }
-//# sourceMappingURL=4.typeNarrowing.js.map
+//# sourceMappingURL=6.typeNarrowing.js.map

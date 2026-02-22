@@ -29,4 +29,4 @@ let channelName;
 // 7. Never Type: never (used for functions that never return or throw an error)
 // 8. Object Types: { name: string; age: number }, etc.
 // 9. Function Types: (param1: type1, param2: type2) => returnType
-//# sourceMappingURL=2.Annotations%20and%20Inference.js.map
+//# sourceMappingURL=4.Annotations%20and%20Inference.js.map
