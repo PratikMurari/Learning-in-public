@@ -58,3 +58,24 @@ let strLength: number = (someValue as string).length; // Type assertion
 // Runtime	| No runtime effect	                        | May have runtime behavior
 // Syntax	| value as Type or <Type>value	            | value as Type (when converting)
 // Example	| (someValue as string).length	            | const str: string = data as string
+
+// Example of type assertion with union types
+type Role = "admin" | "user" | "guest" | "superadmin"; // We later added superadmin role but forgot to update the function
+
+function redirectBasedOnRole(role: Role): void {
+  if (role === "admin") {
+    console.log("Redirecting to admin dashboard...");
+    return;
+  }
+  if (role === "user") {
+    console.log("Redirecting to user dashboard...");
+    return;
+  }
+  if (role === "guest") {
+    console.log("Redirecting to guest dashboard...");
+    return;
+  }
+  role; // This will cause a compile-time error because role can only be "admin", "user", or "guest"
+  // yet it is added coz if someone adds a new role in the future and forgets to update this function, the compiler will catch that error.
+  // example how we later added superadmin role but forgot to update the function
+}
