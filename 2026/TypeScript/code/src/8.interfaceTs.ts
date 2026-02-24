@@ -1,66 +1,149 @@
-// 1 types
-// since we had common parameters in both makeChai and serveChai,
-// we can create an interface for it called ChaiOrder and use it as the type for the parameter of both functions.
-// which made our code more readable, reusable and easier to maintain.
+/* ============================================================
+   1. Shared object shapes with `type`
+   ============================================================ */
 
+/**
+ * Represents a generic chai order.
+ * This type is reused across multiple functions to avoid duplication.
+ */
 type ChaiOrder = {
-  type: string;
-  sugar: number;
-  strong: boolean;
+  type: string; // Type of chai (e.g., "masala", "ginger")
+  sugar: number; // Amount of sugar (e.g., teaspoons)
+  strong: boolean; // Whether the chai should be strong
 };
 
-function makeChai(order: ChaiOrder) {
-  console.log(order);
+/**
+ * Prepares chai based on the given order.
+ */
+function makeChai(order: ChaiOrder): void {
+  console.log("Making chai:", order);
 }
 
-function serveChai(order: ChaiOrder) {
-  console.log(order);
+/**
+ * Serves chai based on the given order.
+ * Reuses the same ChaiOrder type for consistency.
+ */
+function serveChai(order: ChaiOrder): void {
+  console.log("Serving chai:", order);
 }
 
-// 2 interfaces
-// we can also use interfaces to define the structure of objects that we want to create.
-// for example, we can create an interface for a tea recipe and then implement it in a class.
-type TeaRecipe = {
-  water: number;
-  milk: number;
-};
+/* ============================================================
+   2. Interfaces vs Types (when working with classes)
+   ============================================================ */
 
+/**
+ * Interfaces are commonly used to define contracts for classes.
+ * A class that implements an interface MUST provide all its properties.
+ */
+interface TeaRecipe {
+  water: number; // amount of water in ml
+  milk: number; // amount of milk in ml
+}
+
+/**
+ * MasalaChai must match the TeaRecipe interface exactly.
+ */
 class MasalaChai implements TeaRecipe {
   water = 100;
   milk = 100;
 }
 
+/**
+ * Interface defining allowed cup sizes.
+ * Uses a union of string literals.
+ */
 interface CupSize {
   size: "small" | "large";
 }
 
+/**
+ * Chai class implements CupSize and must follow its constraints.
+ */
 class Chai implements CupSize {
   size: "small" | "large" = "large";
 }
 
-// 3 A class can only implement an object type or intersection of object types with statically known members.
-// as soon as u will make interface out of it, it will start working
+/* ============================================================
+   3. Why classes cannot implement union types
+   ============================================================ */
+
+/**
+ * A class can only implement:
+ * - an interface, or
+ * - an object type (or intersection of object types)
+ *
+ * Union types (`A | B`) are NOT allowed because the class
+ * cannot guarantee which shape it should implement.
+ */
+
+// ❌ This does NOT work
 // type Response = { ok: true } | { ok: false };
-// class myRes implements Response {
+// class MyResponse implements Response {
 //   ok = true;
 // }
 
-type TeaType = "masala" | "ginger" | "lemon";
-
-function orderChai(t: TeaType) {
-  console.log(t);
+// ✅ Correct approach: use an interface or a single object type
+interface Response {
+  ok: boolean;
 }
 
-type BaseChai = { teaLeaves: number };
-type Extra = { masala: number };
+class MyResponse implements Response {
+  ok = true;
+}
 
-type masalaChai = BaseChai & Extra;
+/* ============================================================
+   4. Literal unions for strict values
+   ============================================================ */
 
-const cup: masalaChai = {
+/**
+ * TeaType restricts chai orders to known options only.
+ * This prevents invalid values at compile time.
+ */
+type TeaType = "masala" | "ginger" | "lemon";
+
+function orderChai(type: TeaType): void {
+  console.log("Ordered chai type:", type);
+}
+
+/* ============================================================
+   5. Intersection types (combining multiple object types)
+   ============================================================ */
+
+/**
+ * Base ingredients for any chai.
+ */
+type BaseChai = {
+  teaLeaves: number;
+};
+
+/**
+ * Extra ingredients specific to masala chai.
+ */
+type MasalaExtras = {
+  masala: number;
+};
+
+/**
+ * Intersection type that combines BaseChai and MasalaExtras.
+ */
+type MasalaChaiIngredients = BaseChai & MasalaExtras;
+
+/**
+ * Object must satisfy ALL properties from both types.
+ */
+const cup: MasalaChaiIngredients = {
   teaLeaves: 2,
   masala: 1,
 };
 
+/* ============================================================
+   6. Optional properties
+   ============================================================ */
+
+/**
+ * User type where `bio` is optional.
+ * Optional properties are marked using `?`.
+ */
 type User = {
   username: string;
   bio?: string;
@@ -69,7 +152,26 @@ type User = {
 const u1: User = { username: "Pratik" };
 const u2: User = { username: "Pratik", bio: "Pratik.ai" };
 
-type Config = { readonly appName: string; version: string };
-// since appName is readonly, we cannot change its value after it has been assigned.
-// const cfg: Config = { appName: "coffee", version: "1.0" };
+/* ============================================================
+   7. Readonly properties
+   ============================================================ */
+
+/**
+ * Config type with a readonly property.
+ * `appName` can be read but not reassigned.
+ */
+type Config = {
+  readonly appName: string;
+  version: string;
+};
+
+const cfg: Config = {
+  appName: "coffee",
+  version: "1.0",
+};
+
+// ❌ Error: Cannot assign to 'appName' because it is readonly
 // cfg.appName = "tea";
+
+// ✅ Allowed: mutable property
+cfg.version = "1.1";
