@@ -44,3 +44,32 @@ class Chai implements CupSize {
 // class myRes implements Response {
 //   ok = true;
 // }
+
+type TeaType = "masala" | "ginger" | "lemon";
+
+function orderChai(t: TeaType) {
+  console.log(t);
+}
+
+type BaseChai = { teaLeaves: number };
+type Extra = { masala: number };
+
+type masalaChai = BaseChai & Extra;
+
+const cup: masalaChai = {
+  teaLeaves: 2,
+  masala: 1,
+};
+
+type User = {
+  username: string;
+  bio?: string;
+};
+
+const u1: User = { username: "Pratik" };
+const u2: User = { username: "Pratik", bio: "Pratik.ai" };
+
+type Config = { readonly appName: string; version: string };
+// since appName is readonly, we cannot change its value after it has been assigned.
+// const cfg: Config = { appName: "coffee", version: "1.0" };
+// cfg.appName = "tea";
