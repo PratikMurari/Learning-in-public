@@ -11,3 +11,16 @@ const chai ={
 //     price: number,
 //     isHot: boolean,
 // }
+
+let tea: {
+    name: string,
+    price: number,
+    isHot: boolean,
+}
+
+tea = {
+    name: "Ginger Tea",
+    price: 25,
+    // isHot: 5, // Error: Type 'string' is not assignable to type 'boolean'.
+    isHot: false,
+}

@@ -12,4 +12,11 @@ const chai = {
 //     price: number,
 //     isHot: boolean,
 // }
+let tea;
+tea = {
+    name: "Ginger Tea",
+    price: 25,
+    // isHot: 5, // Error: Type 'string' is not assignable to type 'boolean'.
+    isHot: false,
+};
 //# sourceMappingURL=9.objectTs.js.map
