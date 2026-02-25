@@ -38,3 +38,13 @@ const adrakTea: Tea = {
   // Error: Type 'number' is not assignable to type 'string'.
   ingredients: ["water", "milk", "sugar", "tea leaves", "ginger"],
 };
+
+// exceptions
+type Cup = { size: string };
+
+let smallCup: Cup = { size: "small" };
+let bigCup = { size: "big", material: "steel" };
+
+smallCup = bigCup; // This is allowed because smallCup has a subset of the properties of bigCup.
+// bigCup = smallCup; // Error: Type 'Cup' is not assignable to type '{ size: string; material: string; }'.
+// Property 'material' is missing in type 'Cup' but required in type '{ size: string; material: string; }'.
