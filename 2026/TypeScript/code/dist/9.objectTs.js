@@ -35,6 +35,5 @@ let u = {
     username: "john_doe",
     password: "securepassword123",
 };
-// if u didn't have the password property, it would throw an error because it's required in the User type.
-// However, if you try to assign an object that has extra properties, it will not throw an error as long as it has all the required properties of the User type.
+// This way, we can reuse the Item and Address types in other parts of our code if needed, and it also makes our code more organized and easier to read.
 //# sourceMappingURL=9.objectTs.js.map

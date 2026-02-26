@@ -66,3 +66,16 @@ let u: User = {
 };
 // if u didn't have the password property, it would throw an error because it's required in the User type.
 // However, if you try to assign an object that has extra properties, it will not throw an error as long as it has all the required properties of the User type.
+
+// datatype splitout
+// Good practice to split out complex types into smaller, reusable types. This can make your code more modular and easier to maintain.
+// For example, instead of defining the order type with all its properties in one place, we can split it out into separate types for the item and address:
+type Item = { name: string; quantity: number };
+type Address = { street: string; pin: number };
+
+type order = {
+  id: string;
+  item: Item[];
+  address: Address;
+};
+// This way, we can reuse the Item and Address types in other parts of our code if needed, and it also makes our code more organized and easier to read.
