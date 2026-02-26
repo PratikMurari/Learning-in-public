@@ -29,6 +29,8 @@ const adrakTea = {
 let smallCup = { size: "small" };
 let bigCup = { size: "big", material: "steel" };
 smallCup = bigCup; // This is allowed because smallCup has a subset of the properties of bigCup.
-// bigCup = smallCup; // Error: Type 'Cup' is not assignable to type '{ size: string; material: string; }'.
-// Property 'material' is missing in type 'Cup' but required in type '{ size: string; material: string; }'.
+let coffee = { brewTime: 5, flavor: "strong" };
+let chaiBrew = coffee; // This is allowed because chaiBrew has a subset of the properties of coffee.
+// let coffeeBrew: Brew = chaiBrew; // Error: Type 'Brew' is not assignable to type '{ brewTime: number; flavor: string; }'.
+// Property 'flavor' is missing in type 'Brew' but required in type '{ brewTime: number; flavor: string; }'.
 //# sourceMappingURL=9.objectTs.js.map

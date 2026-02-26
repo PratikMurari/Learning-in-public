@@ -48,3 +48,9 @@ let bigCup = { size: "big", material: "steel" };
 smallCup = bigCup; // This is allowed because smallCup has a subset of the properties of bigCup.
 // bigCup = smallCup; // Error: Type 'Cup' is not assignable to type '{ size: string; material: string; }'.
 // Property 'material' is missing in type 'Cup' but required in type '{ size: string; material: string; }'.
+
+//kinda similar issue over here as well
+type Brew = { brewTime: number };
+let coffee = { brewTime: 5, flavor: "strong" };
+let chaiBrew: Brew = coffee;
+// heres the issue unffortunately this is allowed because chaiBrew has a subset of the properties of coffee.
