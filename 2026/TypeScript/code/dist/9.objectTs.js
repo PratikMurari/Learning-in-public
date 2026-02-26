@@ -35,5 +35,10 @@ let u = {
     username: "john_doe",
     password: "securepassword123",
 };
-// This way, we can reuse the Item and Address types in other parts of our code if needed, and it also makes our code more organized and easier to read.
+const updateChai = (updates) => {
+    console.log("update chai with", updates);
+};
+updateChai({ price: 25 }); // This is valid because the price property is optional in the updates parameter.
+updateChai({ name: "Masala Chai", isHot: false }); // This is also valid because both name and isHot properties are optional in the updates parameter.
+updateChai({}); // This is valid as well because all properties in the updates parameter are optional.
 //# sourceMappingURL=9.objectTs.js.map
