@@ -54,3 +54,15 @@ type Brew = { brewTime: number };
 let coffee = { brewTime: 5, flavor: "strong" };
 let chaiBrew: Brew = coffee;
 // heres the issue unffortunately this is allowed because chaiBrew has a subset of the properties of coffee.
+
+type User = {
+  username: string;
+  password: string;
+};
+
+let u: User = {
+  username: "john_doe",
+  password: "securepassword123",
+};
+// if u didn't have the password property, it would throw an error because it's required in the User type.
+// However, if you try to assign an object that has extra properties, it will not throw an error as long as it has all the required properties of the User type.

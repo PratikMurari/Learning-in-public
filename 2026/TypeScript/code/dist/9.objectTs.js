@@ -30,7 +30,11 @@ let smallCup = { size: "small" };
 let bigCup = { size: "big", material: "steel" };
 smallCup = bigCup; // This is allowed because smallCup has a subset of the properties of bigCup.
 let coffee = { brewTime: 5, flavor: "strong" };
-let chaiBrew = coffee; // This is allowed because chaiBrew has a subset of the properties of coffee.
-// let coffeeBrew: Brew = chaiBrew; // Error: Type 'Brew' is not assignable to type '{ brewTime: number; flavor: string; }'.
-// Property 'flavor' is missing in type 'Brew' but required in type '{ brewTime: number; flavor: string; }'.
+let chaiBrew = coffee;
+let u = {
+    username: "john_doe",
+    password: "securepassword123",
+};
+// if u didn't have the password property, it would throw an error because it's required in the User type.
+// However, if you try to assign an object that has extra properties, it will not throw an error as long as it has all the required properties of the User type.
 //# sourceMappingURL=9.objectTs.js.map
