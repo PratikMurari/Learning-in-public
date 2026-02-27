@@ -1,48 +1,76 @@
 "use strict";
+/* ============================================================
+   1. Type Inference (Implicit Typing)
+   ============================================================ */
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * TypeScript automatically infers the type of an object
+ * based on its properties and their values.
+ */
 const chai = {
     name: "Masala Chai",
     price: 20,
     isHot: true,
 };
-//ts always infers the type of an object based on its properties and their values.
-// In this case, the type of the chai object would be inferred as:
-// {
-//     name: string,
-//     price: number,
-//     isHot: boolean,
-// }
+/**
+ * Inferred type of `chai`:
+ * {
+ *   name: string;
+ *   price: number;
+ *   isHot: boolean;
+ * }
+ *
+ * No need to explicitly define the type unless necessary.
+ */
+/* ============================================================
+   2. Explicit Object Type Annotation
+   ============================================================ */
+/**
+ * You can explicitly define the structure of an object.
+ * This is useful when the variable is declared first
+ * and assigned later.
+ */
 let tea;
 tea = {
     name: "Ginger Tea",
     price: 25,
-    // isHot: 5, // Error: Type 'string' is not assignable to type 'boolean'.
     isHot: false,
+    // ❌ Error Example:
+    // isHot: 5
+    // Type 'number' is not assignable to type 'boolean'
 };
 const adrakTea = {
     name: "Adrak Tea",
     price: 30,
-    // ingredients: ["water", 2 "milk", "sugar", "tea leaves", "ginger"],
-    // Error: Type 'number' is not assignable to type 'string'.
     ingredients: ["water", "milk", "sugar", "tea leaves", "ginger"],
+    // ❌ Error Example:
+    // ingredients: ["water", 2, "milk"]
+    // Type 'number' is not assignable to type 'string'
 };
 let smallCup = { size: "small" };
 let bigCup = { size: "big", material: "steel" };
-smallCup = bigCup; // This is allowed because smallCup has a subset of the properties of bigCup.
+/**
+ * This is allowed because `bigCup` has at least
+ * the required property (`size`) of type Cup.
+ */
+smallCup = bigCup;
 let coffee = { brewTime: 5, flavor: "strong" };
+/**
+ * Allowed: because coffee is already a variable.
+ */
 let chaiBrew = coffee;
-let u = {
+let user = {
     username: "john_doe",
     password: "securepassword123",
 };
 const updateChai = (updates) => {
-    console.log("update chai with", updates);
+    console.log("Updating chai with:", updates);
 };
-updateChai({ price: 25 }); // This is valid because the price property is optional in the updates parameter.
-updateChai({ name: "Masala Chai", isHot: false }); // This is also valid because both name and isHot properties are optional in the updates parameter.
-updateChai({}); // This is valid as well because all properties in the updates parameter are optional.
+updateChai({ price: 25 });
+updateChai({ name: "Masala Chai", isHot: false });
+updateChai({}); // All valid
 const placeOrder = (order) => {
-    console.log("place order with", order);
+    console.log("Placing order:", order);
 };
 placeOrder({
     name: "Masala Chai",
@@ -52,4 +80,12 @@ const chaiInfo = {
     name: "Lemon Tea",
     price: 30,
 };
+/**
+ * PublicChaiInfo now contains:
+ * {
+ *   name: string;
+ *   price: number;
+ *   isHot: boolean;
+ * }
+ */
 //# sourceMappingURL=9.objectTs.js.map
