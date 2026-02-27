@@ -48,4 +48,8 @@ placeOrder({
     name: "Masala Chai",
     quantity: 2,
 });
+const chaiInfo = {
+    name: "Lemon Tea",
+    price: 30,
+};
 //# sourceMappingURL=9.objectTs.js.map
