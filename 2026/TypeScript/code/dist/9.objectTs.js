@@ -41,4 +41,11 @@ const updateChai = (updates) => {
 updateChai({ price: 25 }); // This is valid because the price property is optional in the updates parameter.
 updateChai({ name: "Masala Chai", isHot: false }); // This is also valid because both name and isHot properties are optional in the updates parameter.
 updateChai({}); // This is valid as well because all properties in the updates parameter are optional.
+const placeOrder = (order) => {
+    console.log("place order with", order);
+};
+placeOrder({
+    name: "Masala Chai",
+    quantity: 2,
+});
 //# sourceMappingURL=9.objectTs.js.map
