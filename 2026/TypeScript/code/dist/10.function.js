@@ -24,4 +24,9 @@ function orderChai(type) { }
 function orderChaiWithDefault(type = "Masala Chai") {
     console.log(`Ordering ${type}...`);
 }
+// object parameter function
+// Here, the function `createChai` takes an object as a parameter with specific properties (or definition): `type`, `sugar`, and `size`. The function returns a number.
+function createChai(order) {
+    return 25;
+}
 //# sourceMappingURL=10.function.js.map
