@@ -3,3 +3,8 @@ function makeChai(type: string, cups: number) {
 }
 
 makeChai("Masala Chai", 2);
+
+function getChaiPrice(): number {
+  // return "25 rupees"; // This will cause a type error because the return type is specified as number
+  return 25;
+}
