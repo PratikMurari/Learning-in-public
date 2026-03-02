@@ -20,4 +20,8 @@ function logChai() {
 //optional parameter function
 //output will be optional, or if it comes, it will be of type string
 function orderChai(type) { }
+//default parameter function
+function orderChaiWithDefault(type = "Masala Chai") {
+    console.log(`Ordering ${type}...`);
+}
 //# sourceMappingURL=10.function.js.map

@@ -22,3 +22,8 @@ function logChai(): void {
 //optional parameter function
 //output will be optional, or if it comes, it will be of type string
 function orderChai(type?: string) {}
+
+//default parameter function
+function orderChaiWithDefault(type: string = "Masala Chai") {
+  console.log(`Ordering ${type}...`);
+}
