@@ -13,3 +13,8 @@ function makeOrder(order: string): string | null {
   if (!order) return null;
   return order;
 }
+
+//void function means it does not return anything
+function logChai():void{
+    console.log("Chai is being made...");
+}

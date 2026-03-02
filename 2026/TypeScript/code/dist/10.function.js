@@ -5,6 +5,16 @@ function makeChai(type, cups) {
 }
 makeChai("Masala Chai", 2);
 function getChaiPrice() {
+    // return "25 rupees"; // This will cause a type error because the return type is specified as number
     return 25;
+}
+function makeOrder(order) {
+    if (!order)
+        return null;
+    return order;
+}
+//void function means it does not return anything
+function logChai() {
+    console.log("Chai is being made...");
 }
 //# sourceMappingURL=10.function.js.map
