@@ -17,4 +17,7 @@ function makeOrder(order) {
 function logChai() {
     console.log("Chai is being made...");
 }
+//optional parameter function
+//output will be optional, or if it comes, it will be of type string
+function orderChai(type) { }
 //# sourceMappingURL=10.function.js.map

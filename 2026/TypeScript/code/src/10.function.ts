@@ -15,6 +15,10 @@ function makeOrder(order: string): string | null {
 }
 
 //void function means it does not return anything
-function logChai():void{
-    console.log("Chai is being made...");
+function logChai(): void {
+  console.log("Chai is being made...");
 }
+
+//optional parameter function
+//output will be optional, or if it comes, it will be of type string
+function orderChai(type?: string) {}
