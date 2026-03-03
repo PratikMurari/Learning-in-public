@@ -1,0 +1,445 @@
+# Arrays, Tuples and Enums in TypeScript
+
+## 1️⃣ Arrays in TypeScript
+
+Arrays in TypeScript are just like JavaScript arrays.
+
+The only difference?
+
+👉 We define **what type of data** the array can hold.
+
+---
+
+## Basic Array Syntax
+
+### Method 1 (Most Common)
+
+```ts
+let teaFlavors: string[] = ["Masala", "Ginger"];
+```
+
+Meaning:
+
+- This is an array
+- It can only contain **strings**
+- Numbers are NOT allowed
+
+If you try:
+
+```ts
+teaFlavors.push(10);
+```
+
+❌ Error — because 10 is a number.
+
+---
+
+### Method 2 (Generic Syntax)
+
+```ts
+let ratings: Array<number> = [4, 5, 4.5];
+```
+
+This means:
+
+- An array of numbers
+- Same as `number[]`
+
+Both methods are correct.
+Most developers prefer:
+
+```
+string[]
+number[]
+```
+
+because it's shorter and cleaner.
+
+---
+
+# 2️⃣ Array of Objects (Very Common in Real Projects)
+
+This is used everywhere — menus, products, users, etc.
+
+### Step 1: Define Type
+
+```ts
+type Tea = {
+  name: string;
+  price: number;
+};
+```
+
+### Step 2: Create Array
+
+```ts
+let menu: Tea[] = [
+  { name: "Masala", price: 15 },
+  { name: "Ginger", price: 20 },
+];
+```
+
+Now:
+
+- Every object MUST have name and price
+- You cannot forget a property
+- You cannot add extra wrong types
+
+This is extremely useful in real applications.
+
+---
+
+# 3️⃣ Readonly Arrays
+
+Sometimes you want:
+
+- Array should exist
+- But should NOT be modified
+
+Example:
+
+```ts
+let cities: readonly string[] = ["Delhi", "Jaipur"];
+```
+
+Now:
+
+```ts
+cities.push("Pune"); ❌ Error
+```
+
+Why?
+Because it is **readonly**.
+
+But normal array:
+
+```ts
+menu.push({ name: "Lemon", price: 25 }); ✔ Allowed
+```
+
+---
+
+# 4️⃣ Multi-Dimensional Arrays (2D Arrays)
+
+Used in:
+
+- Tables
+- Grids
+- Machine Learning
+- Matrix operations
+
+### Example:
+
+```ts
+let table: number[][] = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+```
+
+Meaning:
+
+- Array
+- Inside it → arrays
+- Inside those → numbers
+
+---
+
+# 5️⃣ Tuples in TypeScript
+
+Now comes something special.
+
+Tuples are like arrays BUT:
+
+👉 They have fixed positions
+👉 They have fixed types
+👉 Order matters
+
+---
+
+## Basic Tuple
+
+```ts
+let teaTuple: [string, number] = ["Masala", 20];
+```
+
+Meaning:
+
+- First value MUST be string
+- Second value MUST be number
+- Order cannot change
+
+This is wrong:
+
+```ts
+let teaTuple: [string, number] = [20, "Masala"]; ❌
+```
+
+---
+
+## Optional Tuple Values
+
+```ts
+let userInfo: [string, number, boolean?] = ["Hitesh", 100];
+```
+
+Third value is optional.
+
+You can also do:
+
+```ts
+["Hitesh", 100, true];
+```
+
+Both are valid.
+
+---
+
+# ⚠ Important: Tuple Is Still an Array
+
+This is very important.
+
+At the end of the day:
+
+- Tuple is still an array in JavaScript.
+
+So this is technically possible:
+
+```ts
+let t: [string, number] = ["Tea", 10];
+t.push("Extra"); // This may not error immediately
+```
+
+This can create debugging problems.
+
+Best practice:
+
+- Avoid pushing into tuples.
+- Use them as fixed structures.
+
+---
+
+# 6️⃣ Readonly Tuple
+
+You can make tuple readonly:
+
+```ts
+let location: readonly [number, number] = [28.66, 32.22];
+```
+
+Now you cannot change values.
+
+---
+
+# 7️⃣ Named Tuples (Cleaner Version)
+
+Instead of:
+
+```ts
+let teaItem: [string, number];
+```
+
+You can write:
+
+```ts
+let teaItem: [name: string, price: number];
+```
+
+This makes code:
+
+- More readable
+- More understandable
+
+Example:
+
+```ts
+let item: [name: string, price: number] = ["Masala", 25];
+```
+
+---
+
+# 8️⃣ Enums in TypeScript
+
+Enums are one of the most useful features in TypeScript.
+
+They:
+
+- Restrict choices
+- Prevent invalid values
+- Improve autocomplete
+- Improve safety
+
+---
+
+## Basic Enum
+
+```ts
+enum CupSize {
+  SMALL,
+  MEDIUM,
+  LARGE,
+}
+```
+
+Use it like this:
+
+```ts
+let size: CupSize = CupSize.LARGE;
+```
+
+Now user can only select:
+
+- SMALL
+- MEDIUM
+- LARGE
+
+Nothing else allowed.
+
+---
+
+## Auto Increment Behavior (Important!)
+
+If you write:
+
+```ts
+enum Status {
+  PENDING = 100,
+  SERVED,
+  CANCELLED,
+}
+```
+
+Then values become:
+
+- PENDING = 100
+- SERVED = 101
+- CANCELLED = 102
+
+This happens automatically.
+
+⚠ Be careful — this sometimes causes confusion.
+
+---
+
+# 9️⃣ String Enums (Preferred in Real Projects)
+
+Most developers prefer string enums.
+
+```ts
+enum TeaType {
+  MASALA = "Masala",
+  GINGER = "Ginger",
+}
+```
+
+Usage:
+
+```ts
+function makeTea(type: TeaType) {
+  console.log("Making", type);
+}
+
+makeTea(TeaType.MASALA); ✔
+makeTea("Masala"); ❌
+```
+
+This gives:
+
+- Safety
+- Autocomplete
+- Clear restrictions
+
+---
+
+# 1️⃣0️⃣ Heterogeneous Enums (Not Recommended)
+
+This is allowed:
+
+```ts
+enum Random {
+  ID = 1,
+  NAME = "Tea",
+}
+```
+
+But this is NOT good practice.
+
+Best practice:
+
+- All values should be same type
+- Either all numbers OR all strings
+
+---
+
+# 1️⃣1️⃣ Const Enums
+
+You can also use:
+
+```ts
+const enum SugarLevel {
+  LOW = 1,
+  MEDIUM = 2,
+  HIGH = 3,
+}
+```
+
+Used like:
+
+```ts
+let sugar = SugarLevel.MEDIUM;
+```
+
+Const enums:
+
+- Are optimized
+- Cannot be modified
+- Used in large applications
+
+---
+
+# 🧠 Summary
+
+## Arrays
+
+- `string[]`
+- `Array<number>`
+- `readonly string[]`
+- `number[][]`
+
+## Tuples
+
+- Fixed order
+- Fixed types
+- Optional elements
+- Still arrays internally
+
+## Enums
+
+- Restrict values
+- Improve safety
+- Provide autocomplete
+- String enums preferred
+
+---
+
+# 🚨 Biggest Gotchas
+
+1. Tuple is still array internally.
+2. Enum auto-increment may surprise you.
+3. Readonly prevents mutation.
+4. Order matters in tuples.
+
+---
+
+# 🎯 Final Understanding
+
+Arrays → Flexible
+Tuples → Structured + Ordered
+Enums → Restricted Choices
+
+If you understand these three,
+you understand most foundational data structures in TypeScript.
+
+---
+
+☕ Keep practicing. TypeScript becomes very easy once fundamentals are clear 🙌
