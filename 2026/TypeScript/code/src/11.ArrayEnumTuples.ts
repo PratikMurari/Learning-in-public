@@ -1,0 +1,5 @@
+// Array, Enum, and Tuples in TypeScript
+
+// Arrays
+const chaiFlavours: string[] = ["Masala", "Adrak"/*, 25*/]; // This will cause a type error because 25 is not a string
+const chaiPrices: number[] = [25, 30];
