@@ -22,3 +22,9 @@ const menu: Chai[] = [
 // Array you can define but cannot modify it later
 const cities:readonly string[] = ["Delhi", "Mumbai", "Bangalore"];
 // cities.push("Pune"); // This will cause an error because the array is read-only
+
+// Multidimensional array
+const table: number[][] = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
