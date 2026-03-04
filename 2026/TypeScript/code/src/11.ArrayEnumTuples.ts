@@ -17,3 +17,8 @@ const menu: Chai[] = [
   { name: "Masala", price: 25 },
   { name: "Adrak", price: 30 },
 ];
+
+// Read only array
+// Array you can define but cannot modify it later
+const cities:readonly string[] = ["Delhi", "Mumbai", "Bangalore"];
+// cities.push("Pune"); // This will cause an error because the array is read-only
