@@ -14,4 +14,15 @@ const menu = [
 // Array you can define but cannot modify it later
 const cities = ["Delhi", "Mumbai", "Bangalore"];
 // cities.push("Pune"); // This will cause an error because the array is read-only
+// Multidimensional array
+const table = [
+    [1, 2, 3],
+    [4, 5, 6],
+];
+// Tuples
+let chaiTuple = ["Masala", 25]; // This is a tuple where the first element is a string and the second element is a number
+// chaiTuple = [25, "Masala"]; // This will cause a type error because the order of types is not correct
+let userInfo;
+userInfo = ["John Doe", 30, true]; // This is a tuple with an optional boolean value
+userInfo = ["Jane Doe", 25]; // This is also valid because the boolean value is optional
 //# sourceMappingURL=11.ArrayEnumTuples.js.map

@@ -32,3 +32,7 @@ const table: number[][] = [
 // Tuples
 let chaiTuple = ["Masala", 25]; // This is a tuple where the first element is a string and the second element is a number
 // chaiTuple = [25, "Masala"]; // This will cause a type error because the order of types is not correct
+
+let userInfo: [string, number, boolean?] 
+userInfo = ["John Doe", 30, true]; // This is a tuple with an optional boolean value
+userInfo = ["Jane Doe", 25]; // This is also valid because the boolean value is optional
