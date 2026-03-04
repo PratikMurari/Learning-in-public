@@ -28,3 +28,7 @@ const table: number[][] = [
   [1, 2, 3],
   [4, 5, 6],
 ];
+
+// Tuples
+let chaiTuple = ["Masala", 25]; // This is a tuple where the first element is a string and the second element is a number
+// chaiTuple = [25, "Masala"]; // This will cause a type error because the order of types is not correct
