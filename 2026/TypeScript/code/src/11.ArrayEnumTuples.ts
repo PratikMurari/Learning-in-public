@@ -4,5 +4,16 @@
 const chaiFlavours: string[] = ["Masala", "Adrak" /*, 25*/]; // This will cause a type error because 25 is not a string
 const chaiPrices: number[] = [25, 30];
 
-// different way to declare an array
+// Different way to declare an array
 const rating: Array<number> = [4.5, 5.0];
+
+// Array of objects
+type Chai = {
+  name: string;
+  price: number;
+};
+
+const menu: Chai[] = [
+  { name: "Masala", price: 25 },
+  { name: "Adrak", price: 30 },
+];
