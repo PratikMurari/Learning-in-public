@@ -41,4 +41,12 @@ userInfo = ["Jane Doe", 25]; // This is also valid because the boolean value is 
 const location: readonly [number, number] = [28.6139, 77.209]; // This is a readonly tuple representing latitude and longitude
 // location[0] = 29.0000; // This will cause an error because the tuple is read-only
 
+// Tuple with named elements
 const chaiItems: [name: string, price: number] = ["Masala", 25]; // This is a tuple with named elements for better readability
+
+// Enums
+enum CupSize {
+  SMALL,
+  MEDIUM,
+  LARGE,
+}
