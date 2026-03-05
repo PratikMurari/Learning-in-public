@@ -53,3 +53,11 @@ enum CupSize {
 
 // This is how you use Enums in TypeScript
 const size = CupSize.LARGE;
+
+// Enums Auto Increment Values
+// By default, enums start with 0 and increment by 1 for each member. However, you can assign custom values to the members of an enum.
+enum Status {
+  PENDING = 100,
+  SERVED, // This will automatically be assigned the value 101
+  CANCELLED, // This will automatically be assigned the value 102
+}
