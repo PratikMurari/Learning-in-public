@@ -61,3 +61,17 @@ enum Status {
   SERVED, // This will automatically be assigned the value 101
   CANCELLED, // This will automatically be assigned the value 102
 }
+
+// Enums with String Values
+// we addign to avoid getting the auto incremented (default) values and to make it more readable
+enum ChaiType {
+  MASALA = "Masala",
+  ADRAK = "Adrak",
+  ELACHI = "Elachi",
+}
+function makeChai(type: ChaiType) {
+  console.log(`Making a cup of ${type} chai.`);
+}
+
+makeChai(ChaiType.MASALA); // This will print "Making a cup of Masala chai."
+//makeChai(AADRAK); // This will cause an error because AADRAK is not a valid member of the ChaiType enum

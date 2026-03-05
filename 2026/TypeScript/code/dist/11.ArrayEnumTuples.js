@@ -47,4 +47,17 @@ var Status;
     Status[Status["SERVED"] = 101] = "SERVED";
     Status[Status["CANCELLED"] = 102] = "CANCELLED";
 })(Status || (Status = {}));
+// Enums with String Values
+// we addign to avoid getting the auto incremented (default) values and to make it more readable
+var ChaiType;
+(function (ChaiType) {
+    ChaiType["MASALA"] = "Masala";
+    ChaiType["ADRAK"] = "Adrak";
+    ChaiType["ELACHI"] = "Elachi";
+})(ChaiType || (ChaiType = {}));
+function makeChai(type) {
+    console.log(`Making a cup of ${type} chai.`);
+}
+makeChai(ChaiType.MASALA); // This will print "Making a cup of Masala chai."
+//makeChai(AADRAK); // This will cause an error because AADRAK is not a valid member of the ChaiType enum
 //# sourceMappingURL=11.ArrayEnumTuples.js.map
