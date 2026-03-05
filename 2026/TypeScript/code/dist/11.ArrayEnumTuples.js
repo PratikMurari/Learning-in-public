@@ -69,4 +69,15 @@ var RandomEnum;
     RandomEnum[RandomEnum["ID"] = 1] = "ID";
     RandomEnum["Name"] = "Chai";
 })(RandomEnum || (RandomEnum = {}));
+// Const Enums
+// Const enums are a special kind of enum that is completely removed during compilation.
+// They are used when you want to define a set of constants that will be inlined at compile time, which can improve performance.
+// This is also used to make sure that the values of the enum are not changed at runtime, as they will be inlined as constants in the generated JavaScript code.
+var Sugar;
+(function (Sugar) {
+    Sugar[Sugar["LOW"] = 1] = "LOW";
+    Sugar[Sugar["MEDIUM"] = 2] = "MEDIUM";
+    Sugar[Sugar["HIGH"] = 3] = "HIGH";
+})(Sugar || (Sugar = {}));
+const s = Sugar.MEDIUM; // This will be inlined as 2 during compilation, which can improve performance
 //# sourceMappingURL=11.ArrayEnumTuples.js.map

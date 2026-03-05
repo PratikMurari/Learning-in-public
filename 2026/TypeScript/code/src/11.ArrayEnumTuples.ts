@@ -84,3 +84,15 @@ enum RandomEnum {
   ID = 1,
   Name = "Chai",
 }
+
+// Const Enums
+// Const enums are a special kind of enum that is completely removed during compilation.
+// They are used when you want to define a set of constants that will be inlined at compile time, which can improve performance.
+// This is also used to make sure that the values of the enum are not changed at runtime, as they will be inlined as constants in the generated JavaScript code.
+const enum Sugar {
+  LOW = 1,
+  MEDIUM = 2,
+  HIGH = 3,
+}
+
+const s = Sugar.MEDIUM; // This will be inlined as 2 during compilation, which can improve performance
