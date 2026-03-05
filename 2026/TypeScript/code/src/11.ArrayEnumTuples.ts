@@ -96,3 +96,8 @@ const enum Sugar {
 }
 
 const s = Sugar.MEDIUM; // This will be inlined as 2 during compilation, which can improve performance
+
+// Tuple with extra elements
+let t: [string, number] = ["chai", 10]; // This is a tuple with a string and a number
+t.push("extra"); // This will not cause an error because tuples in TypeScript are actually arrays, but it can lead to unexpected behavior
+console.log(t); // This will print ["chai", 10, "extra"], which is not what we intended for a tuple
