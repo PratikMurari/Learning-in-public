@@ -75,3 +75,12 @@ function makeChai(type: ChaiType) {
 
 makeChai(ChaiType.MASALA); // This will print "Making a cup of Masala chai."
 //makeChai(AADRAK); // This will cause an error because AADRAK is not a valid member of the ChaiType enum
+
+// Heterogeneous Enums
+// usually we prefer to avoid this because it can lead to confusion,
+// but TypeScript does allow you to have enums with mixed types
+// (both string and number values)
+enum RandomEnum {
+  ID = 1,
+  Name = "Chai",
+}
