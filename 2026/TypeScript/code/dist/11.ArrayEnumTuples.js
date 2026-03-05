@@ -37,4 +37,6 @@ var CupSize;
     CupSize[CupSize["MEDIUM"] = 1] = "MEDIUM";
     CupSize[CupSize["LARGE"] = 2] = "LARGE";
 })(CupSize || (CupSize = {}));
+// This is how you use Enums in TypeScript
+const size = CupSize.LARGE;
 //# sourceMappingURL=11.ArrayEnumTuples.js.map

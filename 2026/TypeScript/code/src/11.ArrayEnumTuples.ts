@@ -50,3 +50,6 @@ enum CupSize {
   MEDIUM,
   LARGE,
 }
+
+// This is how you use Enums in TypeScript
+const size = CupSize.LARGE;
