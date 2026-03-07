@@ -1,5 +1,7 @@
 # Type Annotations and Type Inference in TypeScript
 
+> Source: https://youtu.be/mUz7nbbZJc0?si=GUJi3WHabv25Jzwc
+
 ## 1. What This Lecture Is About
 
 This lecture explains **two of the most important core ideas in TypeScript**:

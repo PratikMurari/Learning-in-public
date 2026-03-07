@@ -1,5 +1,7 @@
 # Lecture 3: How to Set Up TypeScript in a Project
 
+> Source: https://youtu.be/4O4Y1TJz3F0?si=GV5oxM6zEuZiCx89
+
 ## 1. Goal of This Lecture
 
 The purpose of this lecture is very simple:

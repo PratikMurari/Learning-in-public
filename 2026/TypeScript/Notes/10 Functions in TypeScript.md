@@ -1,5 +1,7 @@
 # Functions in TypeScript
 
+> Source: https://youtu.be/hVMD8imCBrE?si=aea1QVrDfZK18_-4
+
 ## 1. Big Idea About Functions in TypeScript
 
 Functions in TypeScript are actually very simple.

@@ -1,5 +1,7 @@
 # Lecture 2: How TypeScript Works (Behind the Scenes)
 
+> Sorce: https://youtu.be/hvbXtB52x8s?si=b1GsvF2LY8zAMbcQ
+
 ## 1. Purpose of this Lecture
 
 This lecture explains **what happens behind the scenes** when you write TypeScript code.

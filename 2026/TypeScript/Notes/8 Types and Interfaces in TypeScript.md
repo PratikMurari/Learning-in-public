@@ -1,5 +1,7 @@
 # Types and Interfaces in TypeScript
 
+> Source: https://youtu.be/kwcBi3S4bHU?si=SyjDWH9BB5m8sL2x
+
 ## 1. Why Do We Need Types & Interfaces?
 
 As projects grow, data becomes **complex and repetitive**.

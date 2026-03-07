@@ -1,5 +1,7 @@
 # Lecture 1: Introduction to TypeScript
 
+> Source: https://youtu.be/COFQ-wrn9P4?si=i9y25qt0I5P6PdXf
+
 
 ## 1. What is this TypeScript series about?
 

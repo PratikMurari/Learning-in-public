@@ -1,5 +1,7 @@
 # Type Assertion, `unknown`, and `never` in TypeScript
 
+> Source: https://youtu.be/npYs6HMBIG0?si=j7VMnYEJk4wF9pWm
+
 ## 1. What This Lecture Is About
 
 This lecture explains **three important TypeScript concepts** that appear a lot in real projects:

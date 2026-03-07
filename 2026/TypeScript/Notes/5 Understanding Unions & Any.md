@@ -1,5 +1,7 @@
 # Understanding Union Types & `any` in TypeScript
 
+> Source: https://youtu.be/fFs17LZhicg?si=wjMXRUHoDAPNrIUK
+
 ## 1. What This Lecture Is About
 
 This lecture covers **two very important TypeScript concepts**:

@@ -1,5 +1,7 @@
 # Objects in TypeScript
 
+> Source: https://youtu.be/aV0mlw1Hfh8?si=0Xq73o_2ElXNk4-t
+
 ## 1. Why a Separate Lecture on Objects?
 
 Objects look **simple** in JavaScript, but in TypeScript they become **very powerful**.

@@ -1,5 +1,7 @@
 # Type Narrowing & Type Guards in TypeScript
 
+> Source: https://youtu.be/TdejZsExjws?si=QIW9dm4ZvbnjF7A0
+
 ## 1. What This Lecture Is About
 
 This lecture explains **how TypeScript safely works with uncertain data** using:

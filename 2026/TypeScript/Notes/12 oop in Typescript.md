@@ -1,5 +1,7 @@
 # OOP Concepts in TypeScript
 
+> Source: https://youtu.be/B_eCW0umzjA?si=JOqJcnojE9c8GY9T
+
 # 1. What is OOP in TypeScript?
 
 OOP stands for **Object-Oriented Programming**.
