@@ -62,3 +62,12 @@ class Wallet {
 const w = new Wallet();
 // we prefer private key over # because private is more flexible and can be accessed in subclasses, while # is strictly private to the class it is defined in.
 w.getBalance(); // ok, we can access the balance through the getBalance method, but we can't access it directly because it is private
+
+// Readonly
+class Cup {
+  readonly capacity: number = 250;
+
+  constructor(capacity: number) {
+    this.capacity = capacity; // we can set the value of a readonly property in the constructor, but we can't change it after that
+  }
+}
