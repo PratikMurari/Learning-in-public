@@ -98,3 +98,15 @@ class EkChai {
   constructor(public flavour: string) {}
 }
 console.log(EkChai.shopName); // ok, we can access the static member without creating an instance of the class
+
+// Abstract classes
+abstract class Drink {
+  abstract make(): void;
+}
+
+class MyChai extends Drink {
+  make() {
+    console.log("Brewing Chai");
+  }
+}
+// we can't create an instance of an abstract class, but we can create an instance of a subclass that implements the abstract method
