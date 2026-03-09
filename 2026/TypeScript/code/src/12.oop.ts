@@ -110,3 +110,16 @@ class MyChai extends Drink {
   }
 }
 // we can't create an instance of an abstract class, but we can create an instance of a subclass that implements the abstract method
+
+// composition 
+class Heater {
+  heat() {}
+}
+
+class ChaiMaker {
+  constructor(private heater: Heater) {}
+
+  makeChai() {
+    this.heater.heat; // we can use the heater to heat the water for making chai, but we don't need to know how the heater works, we just need to know that it has a heat method
+  }
+}
