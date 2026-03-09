@@ -91,3 +91,10 @@ class ModernChai {
 const C = new ModernChai();
 C.sugar = 3; // ok, we can set the sugar level to 3
 C.sugar = 6; // error, we can't set the sugar level to more than 5
+
+// Static members
+class EkChai {
+  static shopName = "ChaiCode Caffe";
+  constructor(public flavour: string) {}
+}
+console.log(EkChai.shopName); // ok, we can access the static member without creating an instance of the class
