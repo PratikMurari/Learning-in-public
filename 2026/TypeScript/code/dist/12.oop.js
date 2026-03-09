@@ -72,4 +72,7 @@ class ModernChai {
         this._sugar = value;
     }
 }
+const C = new ModernChai();
+C.sugar = 3; // ok, we can set the sugar level to 3
+C.sugar = 6; // error, we can't set the sugar level to more than 5
 //# sourceMappingURL=12.oop.js.map

@@ -86,3 +86,8 @@ class ModernChai {
     this._sugar = value;
   }
 }
+
+// how to use getters and setters
+const C = new ModernChai();
+C.sugar = 3; // ok, we can set the sugar level to 3
+C.sugar = 6; // error, we can't set the sugar level to more than 5
