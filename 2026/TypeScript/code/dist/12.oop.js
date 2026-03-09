@@ -59,4 +59,17 @@ class Cup {
         this.capacity = capacity; // we can set the value of a readonly property in the constructor, but we can't change it after that
     }
 }
+// controlled gates
+// we can use getters and setters to control the access to a property of a class, for example, we can use a setter to validate the value before setting it, and a getter to return the value in a specific format
+class ModernChai {
+    _sugar = 2;
+    get sugar() {
+        return this._sugar;
+    }
+    set sugar(value) {
+        if (value > 5)
+            throw new Error("Too much sugar");
+        this._sugar = value;
+    }
+}
 //# sourceMappingURL=12.oop.js.map
