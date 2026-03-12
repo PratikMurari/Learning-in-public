@@ -12,4 +12,13 @@ const s = {
 };
 // usage of function type interface
 const apply50 = (p) => p * 0.5; // 50% discount
+// usage of interface for class
+const machine = {
+    start() {
+        console.log("Tea machine started");
+    },
+    stop() {
+        console.log("Tea machine stopped");
+    },
+};
 //# sourceMappingURL=13.interfaceAndGen.js.map

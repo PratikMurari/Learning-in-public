@@ -41,3 +41,13 @@ interface TeaMachine {
   start(): void;
   stop(): void;
 }
+
+// usage of interface for class
+const machine: TeaMachine = {
+  start() {
+    console.log("Tea machine started");
+  },
+  stop() {
+    console.log("Tea machine stopped");
+  },
+};
