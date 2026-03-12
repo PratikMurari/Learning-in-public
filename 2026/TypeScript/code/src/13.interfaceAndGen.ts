@@ -51,3 +51,8 @@ const machine: TeaMachine = {
     console.log("Tea machine stopped");
   },
 };
+
+//Index signaturing in interface
+interface ChaiRatings {
+  [flavor: string]: number; // index signature, it allows us to define a property with a dynamic name and type
+}
