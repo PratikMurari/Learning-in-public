@@ -26,5 +26,9 @@ const s: Shop = {
   id: 1,
   name: "Chai corner",
 };
-
 // s.id = 2; // error, because id is readonly and cannot be changed after it is set
+
+// function type interface
+interface DiscountCalculator {
+  (price: number): number;
+}
