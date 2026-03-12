@@ -35,3 +35,9 @@ interface DiscountCalculator {
 
 // usage of function type interface
 const apply50: DiscountCalculator = (p) => p * 0.5; // 50% discount
+
+// interface for class
+interface TeaMachine {
+  start(): void;
+  stop(): void;
+}
