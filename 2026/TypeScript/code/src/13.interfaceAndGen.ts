@@ -32,3 +32,6 @@ const s: Shop = {
 interface DiscountCalculator {
   (price: number): number;
 }
+
+// usage of function type interface
+const apply50: DiscountCalculator = (p) => p * 0.5; // 50% discount
