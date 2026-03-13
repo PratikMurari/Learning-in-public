@@ -21,4 +21,10 @@ const machine = {
         console.log("Tea machine stopped");
     },
 };
+//usage of index signature in interface
+const ratings = {
+    masala: 4.5,
+    ginger: 4.0,
+    lemon: 3.5,
+};
 //# sourceMappingURL=13.interfaceAndGen.js.map

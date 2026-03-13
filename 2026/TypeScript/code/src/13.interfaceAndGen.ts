@@ -56,3 +56,10 @@ const machine: TeaMachine = {
 interface ChaiRatings {
   [flavor: string]: number; // index signature, it allows us to define a property with a dynamic name and type
 }
+
+//usage of index signature in interface
+const ratings: ChaiRatings = {
+  masala: 4.5,
+  ginger: 4.0,
+  lemon: 3.5,
+};
