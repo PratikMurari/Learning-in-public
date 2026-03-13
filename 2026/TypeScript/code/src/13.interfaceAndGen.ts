@@ -77,3 +77,13 @@ const u: User = {
   name: "Pratik",
   age: 24,
 };
+
+// interface extension
+interface A {
+  a: string;
+}
+interface B {
+  b: string;
+}
+
+interface C extends A, B {} // interface C extends A and B, it inherits the properties of both A and B
