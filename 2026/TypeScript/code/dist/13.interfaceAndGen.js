@@ -25,6 +25,10 @@ const machine = {
 const ratings = {
     masala: 4.5,
     ginger: 4.0,
-    lemon: 3.5,
+    // lemon: "3.5", // error, because the value must be a number
+};
+const u = {
+    name: "Pratik",
+    age: 24,
 };
 //# sourceMappingURL=13.interfaceAndGen.js.map

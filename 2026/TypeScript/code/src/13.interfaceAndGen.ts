@@ -61,5 +61,19 @@ interface ChaiRatings {
 const ratings: ChaiRatings = {
   masala: 4.5,
   ginger: 4.0,
-  lemon: 3.5,
+  // lemon: "3.5", // error, because the value must be a number
+};
+
+// interface merging
+interface User {
+  name: string;
+}
+
+interface User {
+  age: number;
+}
+
+const u: User = {
+  name: "Pratik",
+  age: 24,
 };
