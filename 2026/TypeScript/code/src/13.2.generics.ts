@@ -9,3 +9,13 @@ function wrapInArray<T>(item: T): T[] {
 wrapInArray(5); // returns [5]
 wrapInArray("masala"); // returns ["masala"]
 wrapInArray({ flavor: "Ginger" }); // returns [{flavor:"Ginger"}]
+
+// second example
+// we can also use generics with multiple type parameters.
+// we can use as many type parameters as we want,
+// and they will be replaced with the actual types when the function is called.
+function pair<A, B>(a: A, b: B): [A, B] {
+  // where A and B are data types that will be passed in when the function is called.
+  return [a, b];
+  // return [b, a]; // this will cause an error because the return type is [A, B] and not [B, A]
+}
