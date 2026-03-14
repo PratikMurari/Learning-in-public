@@ -10,4 +10,18 @@ function wrapInArray(item) {
 wrapInArray(5); // returns [5]
 wrapInArray("masala"); // returns ["masala"]
 wrapInArray({ flavor: "Ginger" }); // returns [{flavor:"Ginger"}]
+// second example
+// we can also use generics with multiple type parameters.
+// we can use as many type parameters as we want,
+// and they will be replaced with the actual types when the function is called.
+function pair(a, b) {
+    // where A and B are data types that will be passed in when the function is called.
+    return [a, b];
+    // return [b, a]; // this will cause an error because the return type is [A, B] and not [B, A]
+}
+// Usage
+// we can call the function with different types of arguments,
+// and the return type will be inferred based on the types of the arguments.
+pair("masala", 20);
+pair("masala", { flavor: "Ginger" });
 //# sourceMappingURL=13.2.generics.js.map

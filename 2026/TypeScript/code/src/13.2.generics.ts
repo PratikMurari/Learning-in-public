@@ -19,3 +19,9 @@ function pair<A, B>(a: A, b: B): [A, B] {
   return [a, b];
   // return [b, a]; // this will cause an error because the return type is [A, B] and not [B, A]
 }
+
+// Usage
+// we can call the function with different types of arguments,
+// and the return type will be inferred based on the types of the arguments.
+pair("masala", 20);
+pair("masala", { flavor: "Ginger" });
