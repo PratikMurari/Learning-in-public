@@ -25,3 +25,8 @@ function pair<A, B>(a: A, b: B): [A, B] {
 // and the return type will be inferred based on the types of the arguments.
 pair("masala", 20);
 pair("masala", { flavor: "Ginger" });
+
+// generic interfaces
+interface Box<T> {
+  contents: T;
+}
