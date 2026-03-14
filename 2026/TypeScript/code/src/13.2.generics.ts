@@ -30,3 +30,7 @@ pair("masala", { flavor: "Ginger" });
 interface Box<T> {
   contents: T;
 }
+// usage
+// const numberBox: Box<number> = { contents: "10" }; // this will cause an error because the type of contents is number and not string
+const numberBox: Box<number> = { contents: 10 }; // this is correct
+const numberBoxCup: Box<string> = { contents: "10" };

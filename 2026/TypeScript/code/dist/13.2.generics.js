@@ -24,4 +24,8 @@ function pair(a, b) {
 // and the return type will be inferred based on the types of the arguments.
 pair("masala", 20);
 pair("masala", { flavor: "Ginger" });
+// usage
+// const numberBox: Box<number> = { contents: "10" }; // this will cause an error because the type of contents is number and not string
+const numberBox = { contents: 10 }; // this is correct
+const numberBoxCup = { contents: "10" };
 //# sourceMappingURL=13.2.generics.js.map
