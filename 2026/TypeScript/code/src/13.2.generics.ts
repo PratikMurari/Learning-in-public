@@ -43,13 +43,16 @@ const numberBoxCup: Box<string> = { contents: "10" };
 // Omit <T, K> creates a new type by omitting properties K from T.
 // Pick <T, K> creates a new type by picking properties K from T.
 
-
 // Real world use case of generics
-// Api use case, Form states in React, etc. 
+// Api use case, Form states in React, etc.
 
 // Api response example
-interface ApiResponse<T> {
+interface ApiPromise<T> {
   status: number;
   data: T;
 }
-
+// usage
+const res: ApiPromise<{ flavor: string }> = {
+  status: 200,
+  data: { flavor: "Masala" },
+};

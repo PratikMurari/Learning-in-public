@@ -28,4 +28,8 @@ pair("masala", { flavor: "Ginger" });
 // const numberBox: Box<number> = { contents: "10" }; // this will cause an error because the type of contents is number and not string
 const numberBox = { contents: 10 }; // this is correct
 const numberBoxCup = { contents: "10" };
+const res = {
+    status: 200,
+    data: { flavor: "Masala" },
+};
 //# sourceMappingURL=13.2.generics.js.map
