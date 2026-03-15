@@ -42,3 +42,14 @@ const numberBoxCup: Box<string> = { contents: "10" };
 // Partial <T> makes all properties of T optional.
 // Omit <T, K> creates a new type by omitting properties K from T.
 // Pick <T, K> creates a new type by picking properties K from T.
+
+
+// Real world use case of generics
+// Api use case, Form states in React, etc. 
+
+// Api response example
+interface ApiResponse<T> {
+  status: number;
+  data: T;
+}
+
