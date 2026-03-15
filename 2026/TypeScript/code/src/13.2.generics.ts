@@ -34,3 +34,11 @@ interface Box<T> {
 // const numberBox: Box<number> = { contents: "10" }; // this will cause an error because the type of contents is number and not string
 const numberBox: Box<number> = { contents: 10 }; // this is correct
 const numberBoxCup: Box<string> = { contents: "10" };
+
+// Partial, Omit, and Pick also comes under generics,
+// they are utility types that are built into TypeScript.
+// They are used to create new types based on existing types.
+
+// Partial <T> makes all properties of T optional.
+// Omit <T, K> creates a new type by omitting properties K from T.
+// Pick <T, K> creates a new type by picking properties K from T.
