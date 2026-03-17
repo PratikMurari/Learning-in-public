@@ -1,8 +1,6 @@
-"use strict";
 /* ============================================================
    1. Shared object shapes with `type`
    ============================================================ */
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Prepares chai based on the given order.
  */
@@ -52,4 +50,5 @@ const cfg = {
 // cfg.appName = "tea";
 // ✅ Allowed: mutable property
 cfg.version = "1.1";
+export {};
 //# sourceMappingURL=8.interfaceTs.js.map

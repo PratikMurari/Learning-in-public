@@ -1,7 +1,5 @@
-"use strict";
 // union types allow us to specify that a variable can hold more than one type of value.
 // We can use the pipe (|) operator to define a union type.
-Object.defineProperty(exports, "__esModule", { value: true });
 let subs = "1M";
 let apiRequestStatus = "pending";
 // apiRequestStatus = "done"; // Error: Type '"done"' is not assignable to type '"success" | "error" | "pending"'.
@@ -16,6 +14,7 @@ for (let order of orders) {
     currentOrder = "11";
 }
 console.log(currentOrder);
+export {};
 // any means usko parvah nahi hai ki usme kya value aayegi, wo kisi bhi type ki ho sakti hai.
 // try to avoid any as much as possible, because it defeats the purpose of using TypeScript,
 // which is to have type safety and catch errors at compile time.

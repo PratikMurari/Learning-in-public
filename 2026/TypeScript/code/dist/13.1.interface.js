@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // usage of interface
 const masala = {
     flavor: "masala",
@@ -31,4 +29,5 @@ const u = {
     name: "Pratik",
     age: 24,
 };
+export {};
 //# sourceMappingURL=13.1.interface.js.map

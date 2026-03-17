@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // Case 1: Type Inference
 let drink = "chai";
 //drink = 4; // Error: Type 'number' is not assignable to type 'string'.
@@ -15,6 +13,7 @@ let drink = "chai";
 let cups = Math.random() > 0.5 ? 10 : 5;
 //Case 3: Type Annotation
 let channelName;
+export {};
 //channelName = 1122; // Error: Type 'number' is not assignable to type 'string'.
 // In this case, we have explicitly annotated the variable 'channelName' with the type 'string'.
 // This means that 'channelName' can only hold string values.

@@ -1,9 +1,7 @@
-"use strict";
 // Type narrowing is a TypeScript process that refines a variable's broad type (e.g., string | number)
 // into a more specific, predictable type (e.g., string) within a certain block of code.
 // It uses runtime checks like typeof, instanceof, or custom predicates to enable precise operations,
 // improving safety and enabling better IDE autocompletion
-Object.defineProperty(exports, "__esModule", { value: true });
 function getChai(kind) {
     if (typeof kind === "string") {
         return `Making ${kind} chai...`;
@@ -84,6 +82,7 @@ function MakeChai(order) {
             break;
     }
 }
+export {};
 // function brew(order: Masala Chai|GingerChai) {
 //   if ("spiceLevel" in order){
 //   }

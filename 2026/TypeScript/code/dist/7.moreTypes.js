@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let response = "42";
 // forceful type assertion, we are telling the compiler that we know better than it does about the type of response.
 let numericLength = response.length;
@@ -60,4 +58,5 @@ function redirectBasedOnRole(role) {
 function neverReturns() {
     while (true) { }
 }
+export {};
 //# sourceMappingURL=7.moreTypes.js.map

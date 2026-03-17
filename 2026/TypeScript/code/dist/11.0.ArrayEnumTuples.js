@@ -1,6 +1,4 @@
-"use strict";
 // Array, Enum, and Tuples in TypeScript
-Object.defineProperty(exports, "__esModule", { value: true });
 // Arrays
 const chaiFlavours = ["Masala", "Adrak" /*, 25*/]; // This will cause a type error because 25 is not a string
 const chaiPrices = [25, 30];
@@ -84,4 +82,5 @@ const s = Sugar.MEDIUM; // This will be inlined as 2 during compilation, which c
 let t = ["chai", 10]; // This is a tuple with a string and a number
 t.push("extra"); // This will not cause an error because tuples in TypeScript are actually arrays, but it can lead to unexpected behavior
 console.log(t); // This will print ["chai", 10, "extra"], which is not what we intended for a tuple
+export {};
 //# sourceMappingURL=11.0.ArrayEnumTuples.js.map

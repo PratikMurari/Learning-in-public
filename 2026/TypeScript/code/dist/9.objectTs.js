@@ -1,8 +1,6 @@
-"use strict";
 /* ============================================================
    1. Type Inference (Implicit Typing)
    ============================================================ */
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * TypeScript automatically infers the type of an object
  * based on its properties and their values.
@@ -80,6 +78,7 @@ const chaiInfo = {
     name: "Lemon Tea",
     price: 30,
 };
+export {};
 /**
  * PublicChaiInfo now contains:
  * {

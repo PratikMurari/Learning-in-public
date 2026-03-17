@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 //Generics are templates, just like interfaces. they are used to create reusable components. they can be used with classes, interfaces, and functions.
 function wrapInArray(item) {
     return [item];
@@ -28,8 +26,10 @@ pair("masala", { flavor: "Ginger" });
 // const numberBox: Box<number> = { contents: "10" }; // this will cause an error because the type of contents is number and not string
 const numberBox = { contents: 10 }; // this is correct
 const numberBoxCup = { contents: "10" };
+// usage
 const res = {
     status: 200,
     data: { flavor: "Masala" },
 };
+export {};
 //# sourceMappingURL=13.2.generics.js.map
