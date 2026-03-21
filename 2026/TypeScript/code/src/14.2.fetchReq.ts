@@ -11,5 +11,9 @@ const fetchData = async () => {
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status}`);
     }
-  } catch (error: any) {}
+    const data: Todo[] = await response.json();
+  } 
+  catch (error: any) {
+
+  }
 };
