@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
   return (
     <div>
       <p>Cups orderded: {count} </p>
