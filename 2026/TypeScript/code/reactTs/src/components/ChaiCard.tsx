@@ -1,11 +1,17 @@
-export function ChaiCard({ name, price, isSpecial = false }) {
+interface ChaiCardProps {
+  name: string;
+  price: number;
+  isSpecial?: boolean; // Optional prop
+}
+
+export function ChaiCard({ name, price, isSpecial = false }: ChaiCardProps) {
   return (
     <article>
       <h2>
         {name}
-        {isSpecial && <span>✨</span>}
+        {isSpecial && <span> ✨</span>}
       </h2>
-      <p>{price}</p>
+      <p>₹ {price}</p>
     </article>
   );
 }
