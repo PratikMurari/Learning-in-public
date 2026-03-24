@@ -1,3 +1,5 @@
+// rfce : React Functional Component Export
+
 import type { Chai } from "../types";
 // we are adding type to declair we are importing types and not funtionalities,
 // this is a good practice to avoid confusion and also helps in better code readability
