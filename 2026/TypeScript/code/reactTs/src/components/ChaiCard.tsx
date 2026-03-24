@@ -7,10 +7,10 @@ interface ChaiCardProps {
 export function ChaiCard({ name, price, isSpecial = false }: ChaiCardProps) {
   return (
     <article>
-      <h2>
+      <h3>
         {name}
         {isSpecial && <span> ✨</span>}
-      </h2>
+      </h3>
       <p>₹ {price}</p>
     </article>
   );

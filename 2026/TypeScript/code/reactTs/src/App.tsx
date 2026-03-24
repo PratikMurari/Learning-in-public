@@ -16,20 +16,29 @@ const menu: Chai[] = [
 function App() {
   return (
     <>
-      // ChaiCard
+      <h1 style={{ textDecoration: "underline" }}>
+        Welcome to React (TypeScript Edition)
+      </h1>
+      <hr />
+
       <div>
-        <h1>Welcome to React (TypeScript Edition)</h1>
+        <h2 style={{ textDecoration: "underline" }}>Chai Cards</h2>
         <ChaiCard name="Green Tea" price={299} />
         <ChaiCard name="Masala Tea" price={349} isSpecial={true} />
       </div>
-      // Counter
+      <hr />
+
       <div>
+        <h2 style={{ textDecoration: "underline" }}>Counter</h2>
         <Counter />
       </div>
-      // ChaiList
+      <hr />
+
       <div>
+        <h2 style={{ textDecoration: "underline" }}>Chai List</h2>
         <ChaiList items={menu} />
       </div>
+      <hr />
     </>
   );
 }
