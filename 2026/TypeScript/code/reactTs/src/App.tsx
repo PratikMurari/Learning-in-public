@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChaiCard } from "./components/ChaiCard";
 import { Counter } from "./components/Counter";
 import { ChaiList } from "./components/ChaiList";
+import { OrderForm } from "./components/OrderForm";
 
 import type { Chai } from "./types";
 
@@ -37,6 +38,16 @@ function App() {
       <div>
         <h2 style={{ textDecoration: "underline" }}>Chai List</h2>
         <ChaiList items={menu} />
+      </div>
+      <hr />
+
+      <div>
+        <h2 style={{ textDecoration: "underline" }}>Order Form</h2>
+        <OrderForm
+          onSubmit={(order) => {
+            console.log("Order submitted:", order.name, order.cups);
+          }}
+        />
       </div>
       <hr />
     </>

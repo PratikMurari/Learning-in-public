@@ -33,6 +33,8 @@ export function OrderForm({ onSubmit }: OrderFormProps) {
           setCups(Number(e.target.value) || 0)
         }
       />
+
+      <button type="submit">Place Order</button>
     </form>
   );
 }
