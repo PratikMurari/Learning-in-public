@@ -1,0 +1,1 @@
+{"version":3,"file":"OrderForm.d.ts","sourceRoot":"","sources":["OrderForm.tsx"],"names":[],"mappings":"AAGA,UAAU,cAAc;IAEtB,QAAQ,CAAC,KAAK,EAAE;QAAE,IAAI,EAAE,MAAM,CAAC;QAAC,IAAI,EAAE,MAAM,CAAA;KAAE,GAAG,IAAI,CAAC;CACvD;AAED,wBAAgB,SAAS,CAAC,EAAE,QAAQ,EAAE,EAAE,cAAc,2CA+BrD"}
