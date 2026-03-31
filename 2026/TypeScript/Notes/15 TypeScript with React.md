@@ -1,5 +1,7 @@
 # TypeScript with React – Crash Course
 
+> Source: https://youtu.be/-AXlZw6Gatw?si=WGUPY3X4ztjd7AYb
+
 # 1. Big Idea of This Lecture
 
 👉 **React + TypeScript is NOT complicated**

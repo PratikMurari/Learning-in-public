@@ -1,5 +1,7 @@
 # Type Declarations and Axios in TypeScript
 
+> Source: https://www.youtube.com/watch?v=GTyKTyw2GhI
+
 # 1. What are Type Declarations?
 
 TypeScript provides:
