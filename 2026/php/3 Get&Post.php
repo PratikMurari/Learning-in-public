@@ -25,6 +25,13 @@
         <input type="password" name="password"><br>
         <input type="submit" value="Log In">
     </form>
+
+    <h3>Exercise</h3>
+    <form action="3 Get&Post.php" method="post">
+        <label>Quantity: </label><br>
+        <input type="text" name="quantity"><br>
+        <input type="submit" value="submit">
+    </form>
 </body>
 </html>
 
@@ -61,4 +68,11 @@ echo $_POST['password'] . "<br>";
 
 // $_GET and $_POST are superglobal variables, which means they are available in all scopes throughout a script.
 // They are used to collect data from HTML forms and send it to the server for processing.
+
+//exercise
+$item = "Pizza";
+$price = 10;
+$quantity = $_POST["quantity"];
+$total = $price * $quantity;
+echo "You ordered $quantity x $item(s) for a total of \$$total.";
 ?>
