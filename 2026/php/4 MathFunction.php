@@ -34,7 +34,8 @@
     // $solution = max($x, $y, $z);
     // $solution = min($x, $y, $z);
     // $solution = pi();
-    $solution = rand();
+    // $solution = rand();
+    $solution = rand($x, $y);
 
     echo $solution;
 ?>
