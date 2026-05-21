@@ -10,7 +10,6 @@
         <label>x</label>
         <input type="text" name="x">
         <input type="submit" value="solution">
-        <!-- <input type="submit" value="solution"> -->
 
     </form>    
 </body>
@@ -20,8 +19,8 @@
     $x = $_POST["x"];
     $solution = null;
 
-    $solution = abs($x);    
-    // $solution = round($x);
+    // $solution = abs($x);    
+    $solution = round($x);
 
     echo $solution;
 ?>
