@@ -21,7 +21,9 @@
 
     // $solution = abs($x);    
     // $solution = round($x);
-    $solution = floor($x);
+    // $solution = floor($x);
+    $solution = ceil($x);
+
 
     echo $solution;
 ?>
