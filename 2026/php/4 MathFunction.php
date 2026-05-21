@@ -25,17 +25,18 @@
     $z = $_POST["z"];
     $solution = null;
 
-    // $solution = abs($x);    
-    // $solution = round($x);
-    // $solution = floor($x);
-    // $solution = ceil($x);
-    // $solution = sqrt($x);
-    // $solution = pow($x, $y);
-    // $solution = max($x, $y, $z);
-    // $solution = min($x, $y, $z);
-    // $solution = pi();
-    // $solution = rand();
-    $solution = rand($x, $y);
+    // $solution = abs($x);             // absolute value makes the number positive    
+    // $solution = round($x);           // round to the nearest integer
+    // $solution = floor($x);           // round down to the nearest integer
+    // $solution = ceil($x);            // round up to the nearest integer
+    // $solution = sqrt($x);            // square root of a number
+    // $solution = pow($x, $y);         // power function, $x raised to the power of $y
+    // $solution = max($x, $y, $z);     // returns the maximum value among the arguments
+    // $solution = min($x, $y, $z);     // returns the minimum value among the arguments
+    // $solution = pi();                // returns the value of pi  
+    // $solution = rand();              // generates a number
+    // $solution = rand($x, $y);        // generates a random number between $x and $y
+    $solution = rand(1,6);              // generates a random number between 1 and 6 (like a dice roll)
 
     echo $solution;
 ?>
