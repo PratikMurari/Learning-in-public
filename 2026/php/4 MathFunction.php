@@ -8,10 +8,10 @@
 <body>
     <form action ="4 MathFunction.php" method="post">
         <label>x</label>
-        <input type="text" name="x"> <br>
+        <input type="text" name="x"> <br> <br>
         <label>y</label>
-        <input type="text" name="y"> <br>
-        <input type="submit" value="solution">
+        <input type="text" name="y"> <br> <br>
+        <input type="submit" value="solution"> <br>
 
     </form>    
 </body>
@@ -26,7 +26,8 @@
     // $solution = round($x);
     // $solution = floor($x);
     // $solution = ceil($x);
-    $solution = pow($x, $y);
+    $solution = sqrt($x);
+    // $solution = pow($x, $y);
 
     echo $solution;
 ?>
