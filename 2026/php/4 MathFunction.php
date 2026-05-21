@@ -32,7 +32,8 @@
     // $solution = sqrt($x);
     // $solution = pow($x, $y);
     // $solution = max($x, $y, $z);
-    $solution = min($x, $y, $z);
+    // $solution = min($x, $y, $z);
+    $solution = pi();
 
     echo $solution;
 ?>
