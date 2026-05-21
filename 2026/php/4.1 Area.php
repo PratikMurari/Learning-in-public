@@ -9,16 +9,24 @@
     <form method="post">
         <label> radius </label>
         <input type="text" name="r">
-        <input type="submit" value="circumference">
+        <input type="submit" value="Calculate">
+
     </form>
 </body>
 </html>
 
 <?php 
     $r = $_POST["r"];
+
     $circumference = null;
     $circumference = 2 * pi() * $r;
     $circumference = round($circumference, 2);
-    
-    echo $circumference;
+
+    $area = null;
+    $area = pi() * pow($r,2);
+    $area = round($area,2);
+
+    echo "Circumference is: {$circumference}cm <br>";
+    echo "Area is: {$area}cm <br>";
+
 ?>
