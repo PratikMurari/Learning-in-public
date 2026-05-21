@@ -20,7 +20,8 @@
     $solution = null;
 
     // $solution = abs($x);    
-    $solution = round($x);
+    // $solution = round($x);
+    $solution = floor($x);
 
     echo $solution;
 ?>
