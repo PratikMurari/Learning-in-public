@@ -41,5 +41,12 @@ if (!$cloudy){
 else{
     echo "It's Cloudy <br>";
 }
+
+// exercise 4
+$child = true;
+$senior = false;
+$ticket= ($child || $senior) ? "Discounted Ticket" : "Regular Ticket";
+echo $ticket;
+
 ?>
 
