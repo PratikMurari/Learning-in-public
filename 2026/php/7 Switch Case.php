@@ -44,5 +44,8 @@
         case "Saturday":
             echo "Time to party <br>";
             break;
+        case "Sunday":
+            echo "we relax <br>";
+            break;
     }
 ?>
