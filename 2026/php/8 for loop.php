@@ -1,6 +1,10 @@
 <?php
     // for loop = repeat some code for a certain number amount of times
-    // 
+
+    // format:
+    // for (initialize; condition; increment/decrement){
+    //      code to be repeated
+    // }
 
     //exercise 1
     for ($i = 0; $i < 7; $i++ ){
