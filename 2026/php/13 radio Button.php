@@ -12,7 +12,7 @@
         <input type="radio" name="payment" value="Credit Card"> Credit Card <br>
         <input type="radio" name="payment" value="Debit Card"> Debit Card <br>
         <input type="radio" name="payment" value="Net Banking"> Net Banking <br>
-        <input type="submit" name="confirm" value="Confirm">
+        <input type="submit" name="confirm" value="Confirm"><br><br>
     </form>
 </body>
 </html>
