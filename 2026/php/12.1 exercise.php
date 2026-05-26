@@ -33,4 +33,9 @@
             echo "Hello, {$username}";
         }
     }
+
+    echo "<br><br><br> Behind the scenes: <br><br>";
+        foreach($_POST as $key => $value) {
+        echo "{$key} = {$value} <br>";
+    }
 ?>
