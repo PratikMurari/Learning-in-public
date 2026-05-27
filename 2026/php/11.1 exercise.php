@@ -6,7 +6,7 @@
     <title>A-Array exercise</title>
 </head>
 <body>
-    <form action="11.1 ecercise.php" method="post">
+    <form action="11.1 exercise.php" method="post">
         <label>Enter Country name:</label>
         <input type="text" name="country">
         <input type="submit">

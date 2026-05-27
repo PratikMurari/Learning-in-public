@@ -17,13 +17,13 @@
 </body>
 </html>
 
-<?php
+<?php    
     if (isset($_POST["confirm"])){
         if (isset ($_POST["payment"])){
             echo "You have selected: " . $_POST["payment"];
         }
         else {
-            echo "Please select a mode of payment.";
+            echo "Please select a mode of payment";
         }
     }
 ?>
