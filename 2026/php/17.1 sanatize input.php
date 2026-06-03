@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sanitize Input</title>
 </head>
 <body>
-    <form action="17 sanatize - validate input.php" method="post"> 
+    <form action="17.1 sanatize input.php" method="post"> 
         Username: <br>
         <input type="text" name="username"><br>
         Age: <br>
@@ -30,8 +30,8 @@
         // Sanitize the email input to remove any invalid characters
         $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
 
-        echo "Hello, {$username}!";
-        echo "You are {$age} years old.";
+        echo "Hello, {$username}!<br>";
+        echo "You are {$age} years old.<br>";
         echo "Your email is: {$email}";
     }
 ?>
